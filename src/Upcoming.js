@@ -8,7 +8,7 @@ function Upcuming() {
         fetchItems();
     }, []);
 
-    const [items, setItems] = useState([]);
+    const [items, setItems] = useState([{  images: {}, rarity: {} } ]);
 
     var myHeaders = new Headers();
     myHeaders.append("Authorization", "ee3d5450-77773ada-2c1933ae-2df885f8");
@@ -26,13 +26,29 @@ function Upcuming() {
         setItems(items.items);
     };
 
+    const getItemRarity = (rarity) => {
+        switch(rarity) {
+            case "uncommon":
+                return "cardCommon";
+            case "rare":
+                return "cardRare";
+            case "epic":
+                return "cardEpic";
+            case "dc":
+                return "cardDc";
+            case "shadow series":
+                return "cardShadow";
+        };
+    };
+
+
     return (
         <div className="shopCard">
             {items.map(item => (
                 <Link className="linkText" to={`/upcuming/${item.id}`} key={item.id}>
-                    <div className="card" key={item.id}>
+                    <div className={`card ${getItemRarity(item.rarity)}`} key={item.id}>
                         <p className="cardName">{item.name}</p>
-                        <img className="images" src={item.images.background} alt=""/>
+                        <img className="images" src={item.images.icon} alt=""/>
                         <p>{item.set != "" ? `Set: ${item.set}` : ""}</p>
                     </div>
                 </Link>

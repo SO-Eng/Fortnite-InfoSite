@@ -25,6 +25,20 @@ function Item({ match }) {
         fetchItems();
     }, []);
 
+    const getItemRarity = (rarity) => {
+        switch(rarity) {
+            case "uncommon":
+                return "cardCommon";
+            case "rare":
+                return "cardRare";
+            case "epic":
+                return "cardEpic";
+            case "dc":
+                return "cardDc";
+            case "shadow series":
+                return "cardShadow";
+        };
+    };
 
     if (!item.item == null) {
         return (
@@ -34,7 +48,7 @@ function Item({ match }) {
     else{
     return (
         <div className="itemSite">
-            <div className="itemBox">
+            <div className={`itemBox ${getItemRarity(item.rarity)}`}>
             <p className="itemName">{item.name}</p>
                 <div className="itemContent">
                     <div className="itemText">

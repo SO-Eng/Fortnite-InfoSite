@@ -33,11 +33,48 @@ nav{
 }
 
 .card{
+  width: 150px;
+  min-height: 250px;
   padding: 20px;
+  margin: 40px;
   background: white;
-  background-image: linear-gradient(to top, lightgrey 0%, lightgrey 1%, #e0e0e0 26%, #efefef 48%, #d9d9d9 75%, #bcbcbc 100%);  margin: 40px;
   border-radius: 10px;
   box-shadow: 0px 5px 20px rgb(71, 71, 71);
+}
+
+.cardCommon{
+  background-image: radial-gradient(#67B81D, #195417);
+  border-color: #77CD33;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.cardRare{
+  background-image: radial-gradient(#58AEE6, #154280);
+  border-color: #37D1FF;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.cardEpic{
+  background-image: radial-gradient(#B954F4, #57288D);
+  border-color: #E95EFF;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.cardDc{
+  background-image: radial-gradient(#506FBE, #253562);
+  border-color: #6094CE;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.cardShadow{
+  background-image: radial-gradient(#737176, #313135);
+  border-color: #525254;
+  border-style: solid;
+  border-width: 2px;
 }
 
 .card:hover{
@@ -55,6 +92,12 @@ nav{
 
 .linkText{
   text-decoration: none !important;
+  color: white;
+  font-family: "Burbank Big Condensed";
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(28, 91, 115, .5);
+  font-weight: 500;
 }
 
 .itemSite{
@@ -72,7 +115,6 @@ nav{
   height: 400px;
   padding: 20px;
   border-radius: 10px;
-  background-image: radial-gradient(circle 248px at center, #16d9e3 0%, #30c7ec 47%, #46aef7 100%);
 }
 
 .itemContent{
