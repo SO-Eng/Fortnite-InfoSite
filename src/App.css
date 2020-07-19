@@ -42,7 +42,21 @@ nav{
   box-shadow: 0px 5px 20px rgb(71, 71, 71);
 }
 
+.cardHandmade{
+  background-image: radial-gradient(#F1F1F1, #BCBCBC);
+  border-color: #F1F1F1;
+  border-style: solid;
+  border-width: 2px;
+}
+
 .cardCommon{
+  background-image: radial-gradient(#CACACA, #7D7D7D);
+  border-color: #CACACA;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.cardUncommon{
   background-image: radial-gradient(#67B81D, #195417);
   border-color: #77CD33;
   border-style: solid;
@@ -63,6 +77,41 @@ nav{
   border-width: 2px;
 }
 
+.cardLegendary{
+  background-image: radial-gradient(#FE9029, #FF7605);
+  border-color: #FE9029;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.cardMythic{
+  background-image: radial-gradient(#FCDD79, #DDA322);
+  border-color: #FCDD79;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.cardThranscendent{
+  background-image: radial-gradient(#931414, #7D0B0B);
+  border-color: #931414;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.cardMarvel{
+  background-image: radial-gradient(#931414, #7F0C0C);
+  border-color: #931414;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.cardDark{
+  background-image: radial-gradient(#B542B2, #7C0959);
+  border-color: #B542B2;
+  border-style: solid;
+  border-width: 2px;
+}
+
 .cardDc{
   background-image: radial-gradient(#506FBE, #253562);
   border-color: #6094CE;
@@ -70,9 +119,44 @@ nav{
   border-width: 2px;
 }
 
+.cardFrozen{
+  background-image: radial-gradient(#74D0FB, #5AA3C8);
+  border-color: #74D0FB;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.cardLava{
+  background-image: radial-gradient(#E9211E, #760F1E);
+  border-color: #E9211E;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.cardIcon{
+  background-image: radial-gradient(#90D2C1, #419C9D);
+  border-color: #90D2C1;
+  border-style: solid;
+  border-width: 2px;
+}
+
 .cardShadow{
   background-image: radial-gradient(#737176, #313135);
   border-color: #525254;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.cardStarwars{
+  background-image: radial-gradient(#8e947b, #31312E);
+  border-color: #AFDF00;
+  border-style: solid;
+  border-width: 2px;
+}
+
+.cardSlurp{
+  background-image: radial-gradient(#27B0E4, #2996B6);
+  border-color: #27B0E4;
   border-style: solid;
   border-width: 2px;
 }
