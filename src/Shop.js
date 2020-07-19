@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import AuthHeader from './headerAuth/Authorization';
+import CountDown from './CountDown';
 import RareColor from './helper/GetItemRarity';
 import {Link} from 'react-router-dom';
 
@@ -37,6 +38,9 @@ function Shop() {
 
     return (
         <div className="shopCard">
+            <div className="countDown">
+                <CountDown />
+            </div>
             {featuredItems.map(item => (
                 <Link className="linkText" to={`/item/${item.id}`} key={item.id}>
                     <div className={`card ${RareColor(item.rarity)}`} key={item.id}>

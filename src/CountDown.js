@@ -1,107 +1,71 @@
-import React, { useState, useEffect } from 'react';
-import './App.css';
+import React, { useRef, useState, useEffect } from 'react';
+import './App.css'
 
-  class Countdown extends React.Component {
-    constructor(props) {
-      super(props);
-      this.state = {
-        date: this.props.deadline,
-        targetDate: undefined,
-        itemTitles: [
-          ['день', 'дня', 'дней'],
-          ['час', 'часа', 'часов'],
-          ['минута', 'минуты', 'минут'],
-          ['секунда', 'секунды', 'секунд']
-        ],
-        timeLeft: []
-      };
-      this.timeCounter = this.timeCounter.bind(this);
-    }
-    
-    timeCounter () {
-      var currentDate = new Date(),
-          time = new Date(this.state.date),
-          
-          diff = Math.round((time - currentDate) / 1000),
-  
-          days = Math.floor(diff / (24 * 60 * 60)),
-          surplus  = diff - days * (24 * 60 * 60),
-  
-          hrs = Math.floor( surplus / (60 * 60)),
-          surplus  =  surplus  - hrs * (60 * 60),
-  
-          min = Math.floor( surplus / 60),
-          sec =  surplus  - min * 60;
-  
-          this.setState({
-            timeLeft: [
-              days,
-              hrs,
-              min,
-              sec
-            ]
-          });
-    }
-    
-    componentDidMount() {
-      this.interval = setInterval(this.timeCounter, 1000);
-    }
-  
-    componentWillUnmount() {
-      clearInterval(this.interval);
-    }
-    
-    render() { 
-      const { 
-        date,
-        targetDate,
-        itemTitles,
-        timeLeft,
-        
-      } = this.state;
-      
-      var itemsTime = [],
-          itemsTitle = [];
-      for (var i = 0; i < 4; i++) {
-        itemsTime.push(
-          <div className='countdown__item countdown__item_time'>
-            {
-              timeLeft[i] < 1 ? 
-                '00' : 
-                timeLeft[i] < 10 ? 
-                  '0' + timeLeft[i] : 
-                  timeLeft[i]
-            }
-          </div>
-        );
-        
-        var a = 0,
-            diff = timeLeft[i] - (Math.floor(timeLeft[i] / 10)) * 10;
-  
-            diff == 0 || diff > 4 ? 
-              a = 2 :
-              1 < diff && diff < 5 ? 
-                a = 1 : 
-                0;
-        
-            timeLeft[i] >= 10 && timeLeft[i] < 20 ? a = 2 : 0;
-  
-        itemsTitle.push(
-          <div className='countdown__item countdown__item_title'> 
-            {itemTitles[i][a]}
-          </div>
-        );
+const CountDown = () => {
+
+  const [timerDays, setTimerDays] = useState('00');
+  const [timerHours, setTimerHours] = useState('00');
+  const [timerMinutes, setTimerMinutes] = useState('00');
+  const [timerSeconds, setTimerSeconds] = useState('00');
+
+  let interval = useRef();
+
+  const startTimer = () => {
+    const countDownDate = new Date('July 30 2020 00:00:00').getTime();
+
+    interval = setInterval(() => {
+      const now = new Date().getTime();
+      const distance = countDownDate - now;
+
+      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      const hours = Math.floor((distance % (1000 * 60 * 60 * 24) / (1000 * 60 * 60)));
+      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      if (distance < 0){
+        // stop our timer
+        clearInterval(interval.current);
       }
-        
-      return (
-        <div className='countdown-holder'>
-          <div className='countdown-row'>{itemsTime}</div>
-          <div className='countdown-row'>{itemsTitle}</div>
-        </div>
-      )
-    }
+      else{
+        //update our timer
+        setTimerDays(days);
+        setTimerHours(hours);
+        setTimerMinutes(minutes);
+        setTimerSeconds(seconds);
+      };
+    }, 1000);
   };
-  
-  ReactDOM.render(
-    <Countdown deadline = '2019/01/31 23:55:00'/>, document.getElementById('countdown')
+
+  // Component Did Mount
+  useEffect(() => {
+    startTimer();
+    return () => {
+      clearInterval(interval.current);
+    };
+  });
+
+  return (
+    <div className="timerContainer">
+      <section className="timer">
+        <section>
+          <p>{timerDays}</p>
+          <p><small>Days</small></p>
+        </section>
+        <section>
+          <p>{timerHours}</p>
+          <p><small>Hours</small></p>
+        </section>
+        <section>
+          <p>{timerMinutes}</p>
+          <p><small>Minuts</small></p>
+        </section>
+        <section>
+          <p>{timerSeconds}</p>
+          <p><small>Seconds</small></p>
+        </section>
+      </section>
+    </div>
   );
+}
+
+export default CountDown;
