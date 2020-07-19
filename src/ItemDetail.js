@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import RareColor from './helper/GetItemRarity';
 
 function Item({ match }) {
 
@@ -25,30 +26,9 @@ function Item({ match }) {
         fetchItems();
     }, []);
 
-    const getItemRarity = (rarity) => {
-        switch(rarity) {
-            case "uncommon":
-                return "cardCommon";
-            case "rare":
-                return "cardRare";
-            case "epic":
-                return "cardEpic";
-            case "dc":
-                return "cardDc";
-            case "shadow series":
-                return "cardShadow";
-        };
-    };
-
-    if (!item.item == null) {
-        return (
-            <h2 className="itemSite">Loading...</h2>
-        );
-    }
-    else{
     return (
         <div className="itemSite">
-            <div className={`itemBox ${getItemRarity(item.rarity)}`}>
+            <div className={`itemBox ${RareColor(item.rarity)}`}>
             <p className="itemName">{item.name}</p>
                 <div className="itemContent">
                     <div className="itemText">
@@ -56,6 +36,7 @@ function Item({ match }) {
                         <p className="itemDescr">Typ: {item.type}</p>
                         <p className="itemDescr">Set: {item.set}</p>
                         <p className="itemDescr">Rarität: {item.rarity}</p>
+                        <p className="itemDescr">{item.price != "" ? `Price: ${item.price} V` : ""}</p>
                     </div>
                     <div>
                         <img className="imagesItem" src={item.images.icon} alt=""/>
@@ -65,5 +46,5 @@ function Item({ match }) {
         </div>
         );
     };
-}
+
 export default Item;

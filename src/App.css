@@ -42,6 +42,178 @@ nav{
   box-shadow: 0px 5px 20px rgb(71, 71, 71);
 }
 
+.card:hover{
+  transform: scale(1.1);
+  transition-duration: 500ms;
+}
+
+.cardName{
+  text-decoration: underline;
+}
+
+.images{
+  width: 120px;
+}
+
+.linkText{
+  text-decoration: none !important;
+  color: white;
+  font-family: "Burbank Big Condensed";
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  text-shadow: 0 0 10px rgba(28, 91, 115, .5);
+  font-weight: 500;
+}
+
+.itemSite{
+  min-height: calc(100vh - 87px);
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  display: flex;
+  justify-content: center;
+}
+
+.itemBox{
+  display: block;
+  margin-top: 75px;
+  width: 500px;
+  height: 400px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.itemContent{
+  display: flex;
+  justify-content: space-between;
+}
+
+.itemText{
+  display: block;
+  margin-right: 20px;
+  text-align: left;
+}
+
+.itemName,
+.itemDescr{
+  font-size: 32px;
+  color: white;
+  font-family: "Burbank Big Condensed";
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 0 10px rgba(28, 91, 115, .5);
+}
+
+.itemDescr{
+  font-size: 22px;
+}
+
+.imagesItem{
+  width: 250px;
+  right: 0;
+}
+
+.imagesItem:hover{
+  transform: scale(1.15);
+  transition-duration: 1000ms;
+}
+
+@media only screen and (max-width: 415px) {
+  .itemBox{
+    margin-top: 75px;
+    width: 300px;
+    height: 350px;
+    padding: 15px;
+  }
+
+  .itemName,
+  .itemDescr{
+    font-size: 24px;
+  }
+  
+  .itemDescr{
+    font-size: 16px;
+  }
+
+  .imagesItem{
+    width: 175px;
+  }
+}
+
+@media only screen and (max-width: 320px) {
+  .itemBox{
+    margin-top: 50px;
+    width: 275px;
+    height: 300px;
+    padding: 10px;
+  }
+
+  .itemName,
+  .itemDescr{
+    font-size: 20px;
+  }
+  
+  .itemDescr{
+    font-size: 14px;
+  }
+
+  .imagesItem{
+    width: 150px;
+  }
+}
+
+
+.countdown-holder,
+#countdown {
+  display: inline-block;
+  vertical-align: middle;
+  width: 500px;
+}
+
+.countdown-row {
+  text-align: justify;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.6);
+}
+.countdown-row:after {
+  display: inline-block;
+  width: 100%;
+  height: 0;
+  content: "";
+}
+
+.countdown__item {
+  display: inline-block;
+  width: 23%;
+  text-align: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+.countdown__item_time {
+  position: relative;
+  height: 70px;
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 52px;
+}
+.countdown__item_time:after {
+  position: absolute;
+  font-size: 32px;
+  line-height: 55px;
+  content: ":";
+  right: -3px;
+  top: 0;
+  bottom: 0;
+  color: rgba(255, 255, 255, 0.5);
+}
+.countdown__item_time:last-child:after {
+  display: none;
+}
+
+
+
+/* Rarity Types */
 .cardHandmade{
   background-image: radial-gradient(#F1F1F1, #BCBCBC);
   border-color: #F1F1F1;
@@ -78,8 +250,8 @@ nav{
 }
 
 .cardLegendary{
-  background-image: radial-gradient(#FE9029, #FF7605);
-  border-color: #FE9029;
+  background-image: radial-gradient(#E48822, #7A381D);
+  border-color: #E98D4B;
   border-style: solid;
   border-width: 2px;
 }
@@ -159,126 +331,4 @@ nav{
   border-color: #27B0E4;
   border-style: solid;
   border-width: 2px;
-}
-
-.card:hover{
-  transform: scale(1.1);
-  transition-duration: 500ms;
-}
-
-.cardName{
-  text-decoration: underline;
-}
-
-.images{
-  width: 120px;
-}
-
-.linkText{
-  text-decoration: none !important;
-  color: white;
-  font-family: "Burbank Big Condensed";
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  text-shadow: 0 0 10px rgba(28, 91, 115, .5);
-  font-weight: 500;
-}
-
-.itemSite{
-  min-height: calc(100vh - 87px);
-  margin-block-start: 0px;
-  margin-block-end: 0px;
-  display: flex;
-  justify-content: center;
-}
-
-.itemBox{
-  display: block;
-  margin-top: 75px;
-  width: 500px;
-  height: 400px;
-  padding: 20px;
-  border-radius: 10px;
-}
-
-.itemContent{
-  display: flex;
-  justify-content: space-between;
-}
-
-.itemText{
-  display: block;
-  margin-right: 20px;
-  text-align: left;
-}
-
-.itemName,
-.itemDescr{
-  font-size: 24px;
-  font-weight: 700;
-  color: white;
-}
-
-.itemDescr{
-  font-size: 18px;
-  font-weight: 400;
-}
-
-.imagesItem{
-  width: 250px;
-  right: 0;
-}
-
-.imagesItem:hover{
-  transform: scale(1.15);
-  transition-duration: 1000ms;
-}
-
-.countdown-holder,
-#countdown {
-  display: inline-block;
-  vertical-align: middle;
-  width: 500px;
-}
-
-.countdown-row {
-  text-align: justify;
-  font-size: 18px;
-  color: rgba(255, 255, 255, 0.6);
-}
-.countdown-row:after {
-  display: inline-block;
-  width: 100%;
-  height: 0;
-  content: "";
-}
-
-.countdown__item {
-  display: inline-block;
-  width: 23%;
-  text-align: center;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-      -ms-user-select: none;
-          user-select: none;
-}
-
-.countdown__item_time {
-  position: relative;
-  height: 70px;
-  color: rgba(255, 255, 255, 0.95);
-  font-size: 52px;
-}
-.countdown__item_time:after {
-  position: absolute;
-  font-size: 32px;
-  line-height: 55px;
-  content: ":";
-  right: -3px;
-  top: 0;
-  bottom: 0;
-  color: rgba(255, 255, 255, 0.5);
-}
-.countdown__item_time:last-child:after {
-  display: none;
 }
