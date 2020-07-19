@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import AuthHeader from './headerAuth/Authorization';
+import RareColor from './helper/GetItemRarity';
 import {Link} from 'react-router-dom';
 
 function Shop() {
@@ -34,26 +35,11 @@ function Shop() {
         setSpecialFeaturedItems(items.specialFeatured);
     };
 
-    const getItemRarity = (rarity) => {
-        switch(rarity) {
-            case "uncommon":
-                return "cardCommon";
-            case "rare":
-                return "cardRare";
-            case "epic":
-                return "cardEpic";
-            case "dc":
-                return "cardDc";
-            case "shadow series":
-                return "cardShadow";
-        };
-    };
-
     return (
         <div className="shopCard">
             {featuredItems.map(item => (
                 <Link className="linkText" key={item.id}>
-                    <div className={`card ${getItemRarity(item.rarity)}`} key={item.id}>
+                    <div className={`card ${RareColor(item.rarity)}`} key={item.id}>
                         <p className="cardName">{item.name}</p>
                         <img className="images" src={item.image} alt=""/>
                         <p>{`Price: ${item.price} V`}</p>
@@ -62,7 +48,7 @@ function Shop() {
             ))}
             {specialFeaturedItems.map(item => (
                 <Link className="linkText" key={item.id}>
-                    <div className={`card ${getItemRarity(item.rarity)}`} key={item.id}>
+                    <div className={`card ${RareColor(item.rarity)}`} key={item.id}>
                         <p className="cardName">{item.name}</p>
                         <img className="images" src={item.image} alt=""/>
                         <p>{`Price: ${item.price} V`}</p>

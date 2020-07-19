@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import RareColor from './helper/GetItemRarity';
 import {Link} from 'react-router-dom';
 
 function Upcuming() {
@@ -26,27 +27,11 @@ function Upcuming() {
         setItems(items.items);
     };
 
-    const getItemRarity = (rarity) => {
-        switch(rarity) {
-            case "uncommon":
-                return "cardCommon";
-            case "rare":
-                return "cardRare";
-            case "epic":
-                return "cardEpic";
-            case "dc":
-                return "cardDc";
-            case "shadow series":
-                return "cardShadow";
-        };
-    };
-
-
     return (
         <div className="shopCard">
             {items.map(item => (
                 <Link className="linkText" to={`/upcuming/${item.id}`} key={item.id}>
-                    <div className={`card ${getItemRarity(item.rarity)}`} key={item.id}>
+                    <div className={`card ${RareColor(item.rarity)}`} key={item.id}>
                         <p className="cardName">{item.name}</p>
                         <img className="images" src={item.images.icon} alt=""/>
                         <p>{item.set != "" ? `Set: ${item.set}` : ""}</p>
