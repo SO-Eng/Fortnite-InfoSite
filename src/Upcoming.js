@@ -30,7 +30,7 @@ function Upcuming() {
     return (
         <div className="shopCard">
             {items.map(item => (
-                <Link className="linkText" to={`/upcuming/${item.id}`} key={item.id}>
+                <Link className="linkText" to={`/item/${item.id}`} key={item.id}>
                     <div className={`card ${RareColor(item.rarity)}`} key={item.id}>
                         <p className="cardName">{item.name}</p>
                         <img className="images" src={item.images.icon} alt=""/>

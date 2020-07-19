@@ -38,7 +38,7 @@ function Shop() {
     return (
         <div className="shopCard">
             {featuredItems.map(item => (
-                <Link className="linkText" key={item.id}>
+                <Link className="linkText" to={`/item/${item.id}`} key={item.id}>
                     <div className={`card ${RareColor(item.rarity)}`} key={item.id}>
                         <p className="cardName">{item.name}</p>
                         <img className="images" src={item.image} alt=""/>
@@ -47,7 +47,7 @@ function Shop() {
                 </Link>
             ))}
             {specialFeaturedItems.map(item => (
-                <Link className="linkText" key={item.id}>
+                <Link className="linkText" to={`/item/${item.id}`} key={item.id}>
                     <div className={`card ${RareColor(item.rarity)}`} key={item.id}>
                         <p className="cardName">{item.name}</p>
                         <img className="images" src={item.image} alt=""/>
