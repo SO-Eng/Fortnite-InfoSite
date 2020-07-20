@@ -165,6 +165,7 @@ nav{
   background: darkgrey;
   width: 100%;
   height: 200px;
+  padding-top: 0.67em;
 }
 
 h1 {
@@ -172,6 +173,7 @@ h1 {
   text-align: center;
   text-transform: uppercase;
   font-family: "Burbank Big Condensed";
+  margin-block-start: 0 !important;
 }
 
 .countdown-wrapper {
@@ -215,7 +217,6 @@ h1 {
   .countDown{
     height: 250px;
   }
-  
 }
 
 @media only screen and (max-width: 320px) {
@@ -225,6 +226,37 @@ h1 {
     padding-top: 5px;
     width: 80px;
   }
+}
+
+.shopButtons{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 50px;
+  padding: 10px;
+  background: rgb(62, 62, 66);
+}
+
+.shopButton{
+  width: 50%;
+  line-height: 1.5;
+  color: white;
+  font-family: "Burbank Big Condensed";
+  font-size: 32px;
+  border-radius: 10px;
+}
+
+.shopButton:hover{
+  cursor: pointer;
+  background: #4a6475;
+}
+
+.shopButtonActive{
+  background: #4585af;
+}
+
+.shopButtonActive:hover{
+  background: #4585af;
 }
 
 

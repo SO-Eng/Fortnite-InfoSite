@@ -12,7 +12,6 @@ class Countdown extends React.Component {
     componentDidMount() {
         this.interval = setInterval(() => {
             const { timeTillDate, timeFormat } = this.props;
-            console.log(timeTillDate)
             const then = Moment(timeTillDate, timeFormat);
             const now = Moment().add(1, 'hours');
             const countdown = Moment(then - now);

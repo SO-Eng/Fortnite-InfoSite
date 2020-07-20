@@ -34,6 +34,8 @@ const getItemRarity = (rarity) => {
             return "cardStarwars";
         case "slurp series":
             return "cardSlurp";
+        default:
+            return "cardHandmade";
     };
 };
 
