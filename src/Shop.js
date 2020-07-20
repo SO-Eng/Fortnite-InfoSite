@@ -41,23 +41,24 @@ function Shop() {
         setEndingDates(items.endingDates);
     };
 
-    const selectShop = () => {
-        setIsActiveOne(!isActiveOne);
-        setIsActiveTwo(!isActiveTwo);
+    const selectShopFeatured = () => {
+        setIsActiveOne(true);
+        setIsActiveTwo(false);
     };
 
-    // const selectShop = () => {
-    //     setIsActiveTwo(!isActive);
-    // };
-
+    const selectShopDayli = () => {
+        setIsActiveOne(false);
+        setIsActiveTwo(true);
+    };
+    
     return (
     <div>
         <div className="countDown">
             <Countdown timeTillDate={endingDates.daily} timeFormat="YYYY MM DD, hh:mm:ss+hh:mm"/>
         </div>
         <div className="shopButtons">
-            <div className={isActiveOne ? "shopButton shopButtonActive" : "shopButton"} onClick={selectShop}>Vorgestellte Gegenstände</div>
-            <div className={isActiveTwo ? "shopButton shopButtonActive" : "shopButton"} onClick={selectShop}>Tägliche Gegenstände</div>
+            <div className={isActiveOne ? "shopButton shopButtonActive" : "shopButton"} onClick={selectShopFeatured}>Vorgestellte Gegenstände</div>
+            <div className={isActiveTwo ? "shopButton shopButtonActive" : "shopButton"} onClick={selectShopDayli}>Tägliche Gegenstände</div>
         </div>
         {!isActiveOne ? 
         <div className="shopCard">

@@ -76,6 +76,14 @@ class Countdown extends React.Component {
 
 const SVGCircleHours = ({ radius }) => (
     <svg className="countdown-svg">
+        <svg>
+            <path
+                fill="none"
+                stroke="grey"
+                strokeWidth="6"
+                d={describeArc(50, 50, 47, 0, 359.99)}
+            />
+        </svg>
         <path
             fill="none"
             stroke="#E48822"
@@ -87,6 +95,14 @@ const SVGCircleHours = ({ radius }) => (
 
 const SVGCircleMinutes = ({ radius }) => (
     <svg className="countdown-svg">
+        <svg>
+            <path
+                fill="none"
+                stroke="grey"
+                strokeWidth="6"
+                d={describeArc(50, 50, 47, 0, 359.99)}
+            />
+        </svg>
         <path
             fill="none"
             stroke="#B954F4"
@@ -98,6 +114,14 @@ const SVGCircleMinutes = ({ radius }) => (
 
 const SVGCircleSeconds = ({ radius }) => (
     <svg className="countdown-svg">
+        <svg>
+            <path
+                fill="none"
+                stroke="grey"
+                strokeWidth="6"
+                d={describeArc(50, 50, 47, 0, 359.99)}
+            />
+        </svg>
         <path
             fill="none"
             stroke="#58AEE6"
