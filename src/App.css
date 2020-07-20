@@ -195,7 +195,6 @@ h1 {
   width: 100px;
   height: 100px;
   font-family: "Burbank Big Condensed";
-
 }
 
 .countdown-item span {
@@ -211,6 +210,24 @@ h1 {
   width: 100px;
   height: 100px;
 }
+
+@media only screen and (max-width: 360px) {
+  .countDown{
+    height: 250px;
+  }
+  
+}
+
+@media only screen and (max-width: 320px) {
+  .countdown-item {
+    font-size: 32px;
+    margin: 5px;
+    padding-top: 5px;
+    width: 80px;
+  }
+}
+
+
 /* Rarity Types */
 .cardHandmade{
   background-image: radial-gradient(#F1F1F1, #BCBCBC);
