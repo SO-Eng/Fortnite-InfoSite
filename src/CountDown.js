@@ -1,82 +1,63 @@
-import React, { useRef, useState, useEffect } from 'react';
-import './App.css'
+import React from 'react';
+import Moment from 'moment';
 
-const CountDown = (time) => {
-
-  const isMountedRef = useRef(null);
-
-  const [timerDays, setTimerDays] = useState('00');
-  const [timerHours, setTimerHours] = useState('00');
-  const [timerMinutes, setTimerMinutes] = useState('00');
-  const [timerSeconds, setTimerSeconds] = useState('00');
-
-  let interval = useRef();
-
-  const startTimer = () => {
-    const countDownDate = new Date(time.time).getTime();
-
-    interval = setInterval(() => {
-      const now = new Date().getTime();
-      const distance = countDownDate - now;
-
-      const days = Math.floor(distance / (1000 * 60 * 60 * 24));
-      const hours = Math.floor((distance % (1000 * 60 * 60 * 24) / (1000 * 60 * 60)));
-      const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-      const seconds = Math.floor((distance % (1000 * 60)) / 1000);
-
-      if (distance < 0){
-        // stop our timer
-        clearInterval(interval.current);
-      }
-      else{
-        //update our timer
-        setTimerDays(days);
-        setTimerHours(hours);
-        setTimerMinutes(minutes);
-        setTimerSeconds(seconds);
-      };
-    }, 1000);
-  };
-
-  // Component Did Mount
-  useEffect(() => {
-    isMountedRef.current = true;
-    if (isMountedRef.current) {
-      startTimer();
-      return () => {
-        clearInterval(interval.current);
-      };
+class Countdown extends React.Component {
+    state = {
+        days: undefined,
+        hours: undefined,
+        minutes: undefined,
+        seconds: undefined
     };
-    return () => isMountedRef.current = false;
-  });
 
-  if (isMountedRef.current) {
-    return (
-      <div className="timerContainer">
-        <section className="timer">
-          <section>
-            <p>{timerHours < 10 ? `0${timerHours}` : `${timerHours}`}</p>
-            <p><small>Hours</small></p>
-          </section>
-          <p>:</p>
-          <section>
-            <p>{timerMinutes < 10 ? `0${timerMinutes}` : `${timerMinutes}`}</p>
-            <p><small>Minuts</small></p>
-          </section>
-          <p>:</p>
-          <section>
-            <p>{timerSeconds < 10 ? `0${timerSeconds}` : `${timerSeconds}`}</p>
-            <p><small>Seconds</small></p>
-          </section>
-        </section>
-      </div>
-      );
-  }
-  else{
-    return(
-      <div></div>
-    );
-  };
+    componentDidMount() {
+        this.interval = setInterval(() => {
+            const { timeTillDate, timeFormat } = this.props;
+            console.log(timeTillDate)
+            const then = Moment(timeTillDate, timeFormat);
+            const now = Moment().add(1, 'hours');
+            const countdown = Moment(then - now);
+            //const days = countdown.format('D');
+            const hours = countdown.format('HH');
+            const minutes = countdown.format('mm');
+            const seconds = countdown.format('ss');
+
+            this.setState({ hours, minutes, seconds });
+        }, 1000);
+    };
+
+    componentWillUnmount() {
+        if (this.interval) {
+            clearInterval(this.interval);
+        }
+    };
+
+    render() {
+        const { hours, minutes, seconds } = this.state;
+
+        return (
+            <div>
+                <h1>Countdown</h1>
+                <div className="countdown-wrapper">
+                    {/* <div className="countdown-item">
+                        {days}
+                        <span>days</span>
+                    </div> */}
+                    <div className="countdown-item">
+                        {hours}
+                        <span>hours</span>
+                    </div>
+                    <div className="countdown-item">
+                        {minutes}
+                        <span>minutes</span>
+                    </div>
+                    <div className="countdown-item">
+                        {seconds}
+                        <span>seconds</span>
+                    </div>
+                </div>
+            </div>
+        );
+    };
 }
 
-export default CountDown;
+export default Countdown

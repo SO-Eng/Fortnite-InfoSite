@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import AuthHeader from './headerAuth/Authorization';
-import CountDown from './CountDown';
+import Countdown from './Countdown';
+import moment from 'moment';
 import RareColor from './helper/GetItemRarity';
 import {Link} from 'react-router-dom';
 
@@ -41,7 +42,7 @@ function Shop() {
     return (
         <div className="shopCard">
             <div className="countDown">
-                <CountDown time={endingDates.daily}/>
+                <Countdown timeTillDate={endingDates.daily} timeFormat="YYYY MM DD, hh:mm:ss+hh:mm"/>
             </div>
             {featuredItems.map(item => (
                 <Link className="linkText" to={`/item/${item.id}`} key={item.id}>
