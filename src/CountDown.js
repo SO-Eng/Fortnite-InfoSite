@@ -1,7 +1,9 @@
 import React, { useRef, useState, useEffect } from 'react';
 import './App.css'
 
-const CountDown = () => {
+const CountDown = (time) => {
+
+  const isMountedRef = useRef(null);
 
   const [timerDays, setTimerDays] = useState('00');
   const [timerHours, setTimerHours] = useState('00');
@@ -11,7 +13,7 @@ const CountDown = () => {
   let interval = useRef();
 
   const startTimer = () => {
-    const countDownDate = new Date('July 30 2020 00:00:00').getTime();
+    const countDownDate = new Date(time.time).getTime();
 
     interval = setInterval(() => {
       const now = new Date().getTime();
@@ -38,34 +40,43 @@ const CountDown = () => {
 
   // Component Did Mount
   useEffect(() => {
-    startTimer();
-    return () => {
-      clearInterval(interval.current);
+    isMountedRef.current = true;
+    if (isMountedRef.current) {
+      startTimer();
+      return () => {
+        clearInterval(interval.current);
+      };
     };
+    return () => isMountedRef.current = false;
   });
 
-  return (
-    <div className="timerContainer">
-      <section className="timer">
-        <section>
-          <p>{timerDays}</p>
-          <p><small>Days</small></p>
+  if (isMountedRef.current) {
+    return (
+      <div className="timerContainer">
+        <section className="timer">
+          <section>
+            <p>{timerHours < 10 ? `0${timerHours}` : `${timerHours}`}</p>
+            <p><small>Hours</small></p>
+          </section>
+          <p>:</p>
+          <section>
+            <p>{timerMinutes < 10 ? `0${timerMinutes}` : `${timerMinutes}`}</p>
+            <p><small>Minuts</small></p>
+          </section>
+          <p>:</p>
+          <section>
+            <p>{timerSeconds < 10 ? `0${timerSeconds}` : `${timerSeconds}`}</p>
+            <p><small>Seconds</small></p>
+          </section>
         </section>
-        <section>
-          <p>{timerHours}</p>
-          <p><small>Hours</small></p>
-        </section>
-        <section>
-          <p>{timerMinutes}</p>
-          <p><small>Minuts</small></p>
-        </section>
-        <section>
-          <p>{timerSeconds}</p>
-          <p><small>Seconds</small></p>
-        </section>
-      </section>
-    </div>
-  );
+      </div>
+      );
+  }
+  else{
+    return(
+      <div></div>
+    );
+  };
 }
 
 export default CountDown;

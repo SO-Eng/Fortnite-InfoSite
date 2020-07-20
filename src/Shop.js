@@ -21,6 +21,7 @@ function Shop() {
     const [featuredItems, setFeaturedItems] = useState([]);
     const [specialFeaturedItems, setSpecialFeaturedItems] = useState([]);
     const [dailyItems, setDailyItems] = useState([]);
+    const [endingDates, setEndingDates] = useState([ {endingDates: {} } ]);
 
     const fetchItems = async () => {
         const data = await fetch('https://fortniteapi.io/shop?lang=de', requestOptions);
@@ -34,12 +35,13 @@ function Shop() {
         setFeaturedItems(items.featured);
         console.log(items.specialFeatured);
         setSpecialFeaturedItems(items.specialFeatured);
+        setEndingDates(items.endingDates);
     };
 
     return (
         <div className="shopCard">
             <div className="countDown">
-                <CountDown />
+                <CountDown time={endingDates.daily}/>
             </div>
             {featuredItems.map(item => (
                 <Link className="linkText" to={`/item/${item.id}`} key={item.id}>
