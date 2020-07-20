@@ -1,5 +1,4 @@
 const getItemRarity = (rarity) => {
-    let rareColor = "";
     switch(rarity) {
         case "handmade":
             return "cardHandmade";
