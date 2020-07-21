@@ -64,11 +64,6 @@ function Shop() {
         localStorage.setItem('shopSelection', 'dayli');
     };
     
-    // componentDidMount() {
-    //    const selected = localStorage.getItem('featuredItems') === 'true';
-    //    setIsActiveOne(selected);
-    // };
-
     return (
     <div>
         <div className="countDown">
