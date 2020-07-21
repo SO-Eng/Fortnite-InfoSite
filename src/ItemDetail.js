@@ -24,7 +24,7 @@ function Item({ match }) {
     
     useEffect(() => {
         fetchItems();
-    }, []);
+    },[]);
 
     return (
         <div className="itemSite">

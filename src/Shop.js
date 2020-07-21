@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-import AuthHeader from './headerAuth/Authorization';
+//import AuthHeader from './headerAuth/Authorization';
 import Countdown from './Countdown';
-import moment from 'moment';
 import RareColor from './helper/GetItemRarity';
 import {Link} from 'react-router-dom';
 
@@ -15,10 +14,6 @@ function Shop() {
         headers: myHeaders,
     };
     
-    useEffect(() => {
-        fetchItems();
-    }, []);
-
     const [featuredItems, setFeaturedItems] = useState([]);
     const [specialFeaturedItems, setSpecialFeaturedItems] = useState([]);
     const [dailyItems, setDailyItems] = useState([]);
@@ -40,6 +35,10 @@ function Shop() {
         setSpecialFeaturedItems(items.specialFeatured);
         setEndingDates(items.endingDates);
     };
+
+    useEffect(() => {
+        fetchItems();
+    },[]);
 
     const selectShopFeatured = () => {
         setIsActiveOne(true);

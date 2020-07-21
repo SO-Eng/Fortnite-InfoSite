@@ -41,6 +41,136 @@ nav{
   color: #bec2ce !important;
 }
 
+
+/* Home */
+.homeStart{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.homeStartInfo{
+  margin: 20px;
+}
+
+.fnMap{
+  width: 300px;
+  height: 300px;
+  margin: 20px;
+}
+
+.fnMap:hover{
+  transform: scale(1.1);
+  transition: 500ms;
+}
+
+.homeNews{
+  display: block;
+  justify-content: center;
+  background: #3E3E42;
+  width: 75%;
+  min-height: 50px;
+  padding-bottom: 20px;
+  margin-bottom: 50px;
+  border-radius: 10px;
+}
+
+.newsHeader{
+  color: white;
+  margin: 20px !important;
+}
+
+
+.newsItems{
+  display: flex;
+  border-color: grey;
+  border-style: solid;
+  border-radius: 10px;
+  margin: 5px;
+}
+
+.imageNews{
+  height: 200px;
+  width: auto;
+  border-bottom-left-radius: 7px;
+  border-top-left-radius: 7px;
+}
+
+.newsTextBox{
+  width: 100%;
+}
+.newsTitle{
+  width: 100%;
+  font-family: "Burbank Big Condensed";
+  font-size: 24px;
+  color: whitesmoke;
+}
+
+.newsBody{
+  color: #2cacd1;
+}
+
+.newsInfo{
+  display: flex;
+  justify-content: space-between;
+}
+
+.newsLive{
+  margin-left: 10px;
+}
+
+.newsLiveYes{
+  color: #35eb93;
+}
+
+.newsLiveNo{
+  color: #b36627;
+}
+
+.newsDate{
+  color: #7D7D7D;
+  margin-right: 10px;
+}
+
+
+@media only screen and (max-width: 990px) {
+  .imageNews{
+    height: 150px;
+  }
+}
+
+@media only screen and (max-width: 790px) {
+  .imageNews{
+    height: 120px;
+  }
+  .newsTitle{
+    font-size: 16px;
+  }
+  .newsBody{
+    font-size: 14px;
+  }
+  .newsLive{
+    font-size: 14px;
+  }
+  .newsDate{
+    font-size: 14px;
+  }
+}
+
+@media only screen and (max-width: 570px) {
+  .imageNews{
+    height: 149px;
+    border-top-left-radius: 7px;
+    border-bottom-left-radius: 0px;
+    border-top-right-radius: 7px;
+  }
+  .newsItems{
+    display: block;
+  }
+}
+
+/* Shop */
 .shopCard{
   display: flex;
   justify-content: space-around;
@@ -188,7 +318,7 @@ nav{
   height: 40px;
 }
 
-h1 {
+h1,h2, h3 {
   letter-spacing: 2px;
   text-align: center;
   text-transform: uppercase;
@@ -196,13 +326,13 @@ h1 {
   margin-block-start: 0 !important;
 }
 
-h3 {
+/* h3 {
   letter-spacing: 2px;
   text-align: center;
   text-transform: uppercase;
   font-family: "Burbank Big Condensed";
   margin-block-start: 0 !important;
-}
+} */
 
 .countdown-wrapper {
   display: flex;
