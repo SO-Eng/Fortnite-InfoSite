@@ -53,11 +53,10 @@ function Home() {
     return (
     <div className="shopCard">
         <div className="siteInfoBar">
-
+            <h1>FortNite Master Site</h1>
         </div>
         <div className="homeStart">
             <div className="homeStartInfo">
-                <h1>FortNite Master Site</h1>
                 <h1>Hier kannst Du Informationen</h1>
                 <h1>über FortNite, Items und Spieler</h1>
                 <h1>erhalten!</h1>

@@ -18,7 +18,7 @@ function Statistics() {
   const [playerStats, setPlayerStats] = useState([]);
 
   const fetchItems = async () => {
-      const data = await fetch('https://fortniteapi.io/lookup?username=Ninja', requestOptions);
+      const data = await fetch('https://fortniteapi.io/lookup?username=iPhr3ak', requestOptions);
 
       const items = await data.json();
 
@@ -42,6 +42,9 @@ function Statistics() {
       </div>
       <div className="shopCard">
         <h1>Name: {playerStats.name}</h1>
+      </div>
+      <div className="shopCard">
+        <h3>Sorry, this Account is private!</h3>
       </div>
     </div>
   );
