@@ -29,10 +29,13 @@ function Upcuming() {
 
     return (
         <div className="shopCard">
+            <div className="siteInfoBar">
+                <h3>Items insgesamt: {items.length} !!!</h3>
+            </div>
             {items.map(item => (
                 <Link className="linkText" to={`/item/${item.id}`} key={item.id}>
                     <div className={`card ${RareColor(item.rarity)}`} key={item.id}>
-                        <p className="cardName">{item.name}</p>
+                        <p className="cardName" key={item.id}>{item.name}</p>
                         <img className="images" src={item.images.icon} alt=""/>
                         <p>{item.set != "" ? `Set: ${item.set}` : ""}</p>
                     </div>
