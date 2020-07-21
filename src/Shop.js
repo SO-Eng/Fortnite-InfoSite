@@ -38,18 +38,37 @@ function Shop() {
 
     useEffect(() => {
         fetchItems();
+
+        const selected = localStorage.getItem('shopSelection');
+
+        if (selected == 'dayli') {
+            setIsActiveOne(false);
+            setIsActiveTwo(true);
+        }
+        else {
+            setIsActiveOne(true);
+            setIsActiveTwo(false);
+        }
     },[]);
 
     const selectShopFeatured = () => {
         setIsActiveOne(true);
         setIsActiveTwo(false);
+        localStorage.setItem('shopSelection', 'featured');
+
     };
 
     const selectShopDayli = () => {
         setIsActiveOne(false);
         setIsActiveTwo(true);
+        localStorage.setItem('shopSelection', 'dayli');
     };
     
+    // componentDidMount() {
+    //    const selected = localStorage.getItem('featuredItems') === 'true';
+    //    setIsActiveOne(selected);
+    // };
+
     return (
     <div>
         <div className="countDown">
@@ -73,7 +92,7 @@ function Shop() {
         </div> 
         : 
         <div className="shopCard">
-        {specialFeaturedItems.map(item => (
+        {featuredItems.map(item => (
             <Link className="linkText" to={`/item/${item.id}`} key={item.id}>
                 <div className={`card ${RareColor(item.rarity)}`} key={item.id}>
                     <p className="cardName">{item.name}</p>
@@ -82,7 +101,7 @@ function Shop() {
                 </div>
             </Link>
         ))}
-        {featuredItems.map(item => (
+        {specialFeaturedItems.map(item => (
             <Link className="linkText" to={`/item/${item.id}`} key={item.id}>
                 <div className={`card ${RareColor(item.rarity)}`} key={item.id}>
                     <p className="cardName">{item.name}</p>
