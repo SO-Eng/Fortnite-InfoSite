@@ -41,7 +41,7 @@ function Shop() {
 
         const selected = localStorage.getItem('shopSelection');
 
-        if (selected == 'dayli') {
+        if (selected === 'dayli') {
             setIsActiveOne(false);
             setIsActiveTwo(true);
         }
