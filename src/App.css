@@ -193,18 +193,31 @@ nav{
 .searchBar{
   width: 400px;
   border: none;
-  padding: 10px;
+  height: 33px;
   border-top-left-radius: 10px;
   border-bottom-left-radius: 10px;
+  font-family: "Burbank Big Condensed";
+  font-size: 22px;
+
+}
+
+.selectBar{
+  width: 150px;
+  border: none;
+  margin: 0 5px;
+  height: 35px;
+  font-family: "Burbank Big Condensed";
+  font-size: 22px;
 }
 
 .searchButton{
   background: rgb(61, 161, 192);
   border: none;
-  padding: 5.55px 20px;
+  padding: 0px 20px;
+  height: 35px;
   color: #333;
   font-family: "Burbank Big Condensed";
-  font-size: 20px;
+  font-size: 22px;
   border-top-right-radius: 10px;
   border-bottom-right-radius: 10px;
 
@@ -215,7 +228,9 @@ nav{
   cursor: pointer;
 }
 
-
+.selectForm{
+  width: 150px;
+}
 /* Shop */
 .shopCard{
   display: flex;
