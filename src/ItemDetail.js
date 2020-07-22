@@ -6,7 +6,6 @@ import {Link} from 'react-router-dom';
 function Item({ match }) {
 
     const [item, setItem] = useState( { images: {} } );
-    //var visited = "";
 
     var myHeaders = new Headers();
     myHeaders.append("Authorization", "ee3d5450-77773ada-2c1933ae-2df885f8");

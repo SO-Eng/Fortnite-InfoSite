@@ -221,7 +221,7 @@ nav{
 }
 
 .itemSite{
-  min-height: calc(100vh - 87px);
+  max-height: calc(100vh - 87px);
   margin-block-start: 0px;
   margin-block-end: 0px;
   display: flex;
@@ -232,7 +232,7 @@ nav{
   display: block;
   margin-top: 75px;
   width: 500px;
-  height: 400px;
+  height: auto;
   padding: 20px;
   border-radius: 10px;
 }
