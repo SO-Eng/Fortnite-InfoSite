@@ -18,7 +18,7 @@ function Statistics() {
   const [playerStats, setPlayerStats] = useState([]);
 
   const fetchItems = async () => {
-      const data = await fetch('https://fortniteapi.io/lookup?username=iPhr3ak', requestOptions);
+      const data = await fetch('https://fortniteapi.io/lookup?username=Ipac_Melvin', requestOptions);
 
       const items = await data.json();
 

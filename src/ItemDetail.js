@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import RareColor from './helper/GetItemRarity';
+import {Link} from 'react-router-dom';
 
 function Item({ match }) {
 
     const [item, setItem] = useState( { images: {} } );
+    //var visited = "";
 
     var myHeaders = new Headers();
     myHeaders.append("Authorization", "ee3d5450-77773ada-2c1933ae-2df885f8");
@@ -24,10 +26,23 @@ function Item({ match }) {
     
     useEffect(() => {
         fetchItems();
+
     },[]);
 
+    const getLastVisit = () => {
+        var visited = localStorage.getItem('back');
+
+        return visited;
+    };
+
     return (
-        <div className="itemSite">
+        <div className="shopCard">
+            <div className="siteInfoBar">
+                <Link className="linkText" to={`/${getLastVisit()}`}>
+                    <div className="backButton">Zurück</div>
+                </Link>
+            </div>
+            <div className="itemSite">
             <div className={`itemBox ${RareColor(item.rarity)}`}>
             <p className="itemName">{item.name}</p>
                 <div className="itemContent">
@@ -43,6 +58,7 @@ function Item({ match }) {
                     </div>
                 </div>
             </div>
+        </div>
         </div>
         );
     };

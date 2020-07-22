@@ -7,6 +7,8 @@ function Upcuming() {
 
     useEffect(() => {
         fetchItems();
+
+        localStorage.setItem('back', 'upcuming');
     }, []);
 
     const [items, setItems] = useState([{  images: {}, rarity: {} } ]);

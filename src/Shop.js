@@ -49,6 +49,8 @@ function Shop() {
             setIsActiveOne(true);
             setIsActiveTwo(false);
         }
+
+        localStorage.setItem('back', 'shop');
     },[]);
 
     const selectShopFeatured = () => {

@@ -316,6 +316,24 @@ nav{
   }
 }
 
+.backButton{
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  height: 35px;
+  background: #6c92ac;
+  line-height: 1.2;
+  color: white;
+  font-family: "Burbank Big Condensed";
+  font-size: 32px;
+  border-radius: 10px;
+}
+
+.backButton:hover{
+  cursor: pointer;
+  background: #4a6475;
+}
+
 .countDown,
 .siteInfoBar{
   background: darkgrey;
