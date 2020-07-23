@@ -78,9 +78,10 @@ function Statistics() {
       <div className="siteInfoBar">
         <h3>Hier kannst Du Playerstatistiken einsehen!</h3>
       </div>
-      <div className="shopCard">
+      <div className="searchField">
+        <p className="searchHeader">Suche nach Spielern aus dem Fortnite Universum</p>
         <form onSubmit={getSearch} className="searchForm">
-          <input className="searchBar" type="text" value={search} onChange={updateSearch} />
+          <input className="searchBar" type="text" value={search} placeholder="Gib einen Spielernamen ein:" onChange={updateSearch} />
           <select className="selectBar" onChange={getSelection}>
             <option value="epic">Epic</option>
             <option value="xbl">X-Box</option>

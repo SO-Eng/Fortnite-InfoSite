@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
-//import AuthHeader from './headerAuth/Authorization';
-import Countdown from './Countdown';
+import Countdown from './helper/Countdown';
 import RareColor from './helper/GetItemRarity';
 import {Link} from 'react-router-dom';
 
