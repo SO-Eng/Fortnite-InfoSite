@@ -46,7 +46,7 @@ nav{
     display: initial;
     position: absolute;
     cursor: pointer;
-    top: 37%;
+    top: 32%;
     left: 85%;
   }
   .toggleShow {
@@ -60,11 +60,10 @@ nav{
   }
 }
 
-
-
 .navStyle{
   color: #aaaeb9 !important;
   text-decoration: none;
+  margin: 5px;
 }
 
 .navStyle:hover{
@@ -370,7 +369,7 @@ nav{
 }
 
 .itemSite{
-  max-height: calc(100vh - 87px);
+  min-height: 500px;
   margin-block-start: 0px;
   margin-block-end: 0px;
   display: flex;
