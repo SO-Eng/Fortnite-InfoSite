@@ -10,69 +10,64 @@ function Statistics() {
       headers: myHeaders,
   };
 
-
+  var query = "";
+  var apiCall = "";
   const [search, setSearch] = useState("");
-  const [query, setquery] = useState("");
-  const [playerId, setPlayerId] = useState("");
   const [playerStats, setPlayerStats] = useState([]);
   const [platform, setPlatform] = useState("");
-  
-  
-  useEffect(() => {
-    if (query != "") {
-      //fetchItems();
-    }
-  }, [query]);
-  
-  const fetchItems = async () => {
-    if (query == "") {
-      return;
-    }
-    if (platform != "epic") {
-      const data = await fetch(`https://fortniteapi.io/lookup?username=${query}&platform=${platform}`, requestOptions);
-      const items = await data.json();
-    
-      console.log(items);
-      setPlayerId(items)
-      
-      const data2 = await fetch(`https://fortniteapi.io/stats?account=${items.account_id}`, requestOptions);
-      const userStats = await data2.json();
-      
-      console.log(userStats);
-      setPlayerStats(userStats);
+
+
+  // useEffect(() => {
+  //   //setConnectionString();
+  //   //fetchItems();
+  // }, []);
+
+  const setConnectionString = () => {
+
+    if (platform == "epic" || platform == "") {
+      apiCall = `https://fortniteapi.io/lookup?username=${query}`;
     }
     else{
-      const data = await fetch(`https://fortniteapi.io/lookup?username=${query}`, requestOptions);
-      const items = await data.json();
-    
-      console.log(items);
-      setPlayerId(items)
-      
-      const data2 = await fetch(`https://fortniteapi.io/stats?account=${items.account_id}`, requestOptions);
-      const userStats = await data2.json();
-      
-      console.log(userStats);
-      setPlayerStats(userStats);
+      apiCall = `https://fortniteapi.io/lookup?username=${query}&platform=${platform}`;
     }
   };
-  
+
+  const fetchItems = async () => {
+
+    if (apiCall === "") {
+      return;
+    }
+
+    const data = await fetch(apiCall, requestOptions);
+    const items = await data.json();
+
+    console.log(items);
+
+    const data2 = await fetch(`https://fortniteapi.io/stats?account=${items.account_id}`, requestOptions);
+    const userStats = await data2.json();
+
+    console.log(userStats);
+    setPlayerStats(userStats);
+  };
+
   const updateSearch = e => {
     setSearch(e.target.value);
   };
-  
+
   const getSearch = e => {
     e.preventDefault();
-    setquery(search);
+    query = search;
+    setConnectionString();
     fetchItems();
     //setSearch("");
   };
-  
+
   const getSelection = e => {
     let {value} = e.target;
     console.log(value);
     setPlatform(value);
     };
-  
+
   return (
     <div>
       <div className="siteInfoBar">
@@ -91,7 +86,9 @@ function Statistics() {
         </form>
       </div>
       <div className="shopCard">
+
         <h1>Hier kommen bald die Infos!!!</h1>
+
       </div>
     </div>
   );
