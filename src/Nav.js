@@ -10,22 +10,20 @@ function Nav() {
     //setPlatform(value);
   };
   
+  //https://www.freecodecamp.org/news/how-to-build-a-responsive-navbar-with-a-toggle-menu-using-flexbox-3438e1d08783/
   const classToggle = () => {
   const navs = document.querySelectorAll('.nav-links')
   
   navs.forEach(nav => nav.classList.toggle('toggleShow'));
   };
 
-  // document.querySelector('.link-toggle')
-  // .addEventListener('click', classToggle);
-
   return (
     <nav>
       <Link className="navStyleLogo" to="/">
         <p>4TN8-MASTER</p>
       </Link>
-      <div class="navStyle link-toggle" onClick={classToggle}>
-        <i class="fas fa-bars"></i>
+      <div className="navStyle link-toggle" onClick={classToggle}>
+        <i className="fas fa-bars"></i>
       </div>
       <ul className="nav-links">
         <Link className="navStyle" to="/statistics">
@@ -37,8 +35,8 @@ function Nav() {
         <Link className="navStyle" to="/Shop">
             <li>Today's Shop</li>
         </Link>
-        <div class="navStyle tooltip">
-          <span class="tooltiptext">Noch ohne Funktion...</span>
+        <div className="navStyle tooltip">
+          <span className="tooltiptext">Noch ohne Funktion...</span>
           <select className="selectBarNav" onChange={getSelection} tooltip="test">
             <option value="de">Deutsch</option>
             <option value="en">English</option>
