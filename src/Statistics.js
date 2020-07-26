@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import Locked from './UserLocked';
 import './App.css';
+import UserLocked from './UserLocked';
+import UserTag from './UserTag';
 
 function Statistics() {
 
@@ -12,15 +15,11 @@ function Statistics() {
 
   var query = "";
   var apiCall = "";
+  const [apiCalled, setApiCalled] = useState(false);
   const [search, setSearch] = useState("");
   const [playerStats, setPlayerStats] = useState([]);
   const [platform, setPlatform] = useState("");
 
-
-  // useEffect(() => {
-  //   //setConnectionString();
-  //   //fetchItems();
-  // }, []);
 
   const setConnectionString = () => {
 
@@ -46,6 +45,8 @@ function Statistics() {
     const data2 = await fetch(`https://fortniteapi.io/stats?account=${items.account_id}`, requestOptions);
     const userStats = await data2.json();
 
+    setApiCalled(true);
+
     console.log(userStats);
     setPlayerStats(userStats);
   };
@@ -68,6 +69,11 @@ function Statistics() {
     setPlatform(value);
     };
 
+  useEffect(() => {
+    //setConnectionString();
+    //fetchItems();
+  }, []);
+
   return (
     <div>
       <div className="siteInfoBar">
@@ -85,9 +91,12 @@ function Statistics() {
           <button className="searchButton" type="submit" >Suche</button>
         </form>
       </div>
-      <div className="shopCard">
-
+      <div className="statisticsSite">
+        <UserTag />
         <h1>Hier kommen bald die Infos!!!</h1>
+        <div>
+          <Locked globalStats={playerStats.global_stats} firstCall={apiCalled}/>
+        </div>
 
       </div>
     </div>

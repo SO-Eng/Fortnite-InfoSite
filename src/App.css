@@ -306,7 +306,9 @@ nav{
   font-size: 22px;
 }
 
-.searchButton{
+
+.searchButton,
+.platformButtons{
   background: rgb(61, 161, 192);
   border: none;
   padding: 0px 20px;
@@ -319,7 +321,8 @@ nav{
 
 }
 
-.searchButton:hover{
+.searchButton:hover,
+.platformButtons:hover{
   background: rgb(35, 188, 248);
   cursor: pointer;
 }
@@ -328,6 +331,77 @@ nav{
   width: 150px;
 }
 
+
+.statisticsSite{
+  display: block;
+}
+
+
+/* UserTag */
+.userBanner{
+  max-width: 800px;
+  height: auto;
+  padding-bottom: 10px;
+  margin-left: auto;
+  margin-right: auto;
+  background: #3E3E42;
+  border-radius: 10px;
+}
+
+.divider{
+  border: #7D7D7D;
+  border-bottom-style: solid;
+  border-width: 2px;
+}
+
+.userTextes,
+.bannerHeader{
+  height: 40px;
+  line-height: 40px;
+  font-family: "Burbank Big Condensed";
+  font-size: 22px;
+  color: #7D7D7D;
+}
+
+.userTagInfo{
+  height: 150px;
+  display: flex;
+  height: auto;
+  justify-content: space-between;
+  margin: 10px 30px;
+  flex-wrap: wrap;
+}
+
+.gamerName{
+  display: flex;
+}
+.userTextes{
+  font-size: 28px;
+  border: none;
+  margin-right: 5px;
+}
+
+.userName{
+  color: #E48822;
+}
+
+.userOptions{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.platformButtons{
+  height: 30px;
+  border-radius: 0 !important;
+  margin-top: 5px;
+  margin-left: 2.5px;
+  margin-right: 2.5px;
+}
+
+.platformActive{
+  background: #67B81D;
+}
 
 /* Shop */
 .shopCard{
