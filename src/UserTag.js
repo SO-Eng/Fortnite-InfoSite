@@ -3,25 +3,25 @@ import './App.css';
 
 function UserTag({ stillLoading, firstCall, globalStats, name }) {
 
-    function calcKD(kd) {
+    const calcKD = (kd) => {
         const sum = ((kd?.duo.kd + kd?.solo.kd + kd?.squad.kd) / 3).toFixed(2);
 
         return sum;
     };
 
-    function calcWins(wins) {
+    const calcWins = (wins) => {
         const sum = (wins?.duo.placetop1 + wins?.solo.placetop1 + wins?.squad.placetop1);
 
         return sum;
     };
 
-    function calcWinRate(winRate) {
+    const calcWinRate = (winRate) => {
         const sum = ((winRate?.duo.winrate + winRate?.solo.winrate + winRate?.squad.winrate) / 3 * 100).toFixed(1);
 
         return sum + " %";
     };
 
-    function calcKills(kills) {
+    const calcKills = (kills) => {
         var nf = Intl.NumberFormat();
         const sum = (kills?.duo.kills + kills?.solo.kills + kills?.squad.kills);
 
