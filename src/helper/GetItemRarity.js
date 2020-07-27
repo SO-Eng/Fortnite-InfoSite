@@ -18,7 +18,7 @@ const getItemRarity = (rarity) => {
             return "cardThranscendent";
         case "marvel":
             return "cardMarvel";
-        case "dark series":
+        case "dark":
             return "cardDark";
         case "dc":
             return "cardDc";
