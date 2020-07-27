@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 
-function UserLocked({ globalStats, firstCall }) {
+function UserLocked({ firstCall, globalStats }) {
     
     if (!firstCall) {
         return null;
@@ -12,7 +12,13 @@ function UserLocked({ globalStats, firstCall }) {
     }
     else{
     return (
-        <div>LOCKED from UserLocked.js</div>
+        <div className="userBanner">
+            <div className="bannerHeader divider">Spielerinfromationen:</div>
+            <div className="userLocked">
+                <div className="fasSymbol"><i className="fas fa-user-lock"></i></div>
+                <div className="userTextes userName">Sorry, dieser Account ist privat!</div>
+            </div>
+        </div>
     );}
 };
 

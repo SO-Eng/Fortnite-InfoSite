@@ -92,10 +92,9 @@ function Statistics() {
         </form>
       </div>
       <div className="statisticsSite">
-        <UserTag />
-        <h1>Hier kommen bald die Infos!!!</h1>
+        <UserTag firstCall={apiCalled} globalStats={playerStats.global_stats} name={playerStats.name}/>
         <div>
-          <Locked globalStats={playerStats.global_stats} firstCall={apiCalled}/>
+          <Locked firstCall={apiCalled} globalStats={playerStats.global_stats} />
         </div>
 
       </div>

@@ -355,6 +355,7 @@ nav{
 }
 
 .userTextes,
+.statsText,
 .bannerHeader{
   height: 40px;
   line-height: 40px;
@@ -372,10 +373,13 @@ nav{
   flex-wrap: wrap;
 }
 
-.gamerName{
+.gamerName,
+.statsInfo{
   display: flex;
 }
-.userTextes{
+
+.userTextes,
+.statsText{
   font-size: 28px;
   border: none;
   margin-right: 5px;
@@ -401,6 +405,24 @@ nav{
 
 .platformActive{
   background: #67B81D;
+}
+
+.userGameInfo{
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  min-height: 50px;
+  margin-top: 10px;
+}
+
+.userLocked{
+  display: block;
+}
+
+.fasSymbol{
+  font-size: 150px;
+  color: #E48822;
+  height: auto;
 }
 
 /* Shop */
