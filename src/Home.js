@@ -65,12 +65,9 @@ function Home() {
                 </div>
                 <img className="fnMap" src="https://media.fortniteapi.io/images/maps/map-13.30-2.png?showPOI=true" alt=""/>
             </div>
-
         </div>
         <div className="shadowBox"></div>
-
         <div className="homeNews">
-
             <h2 className="newsHeader">News</h2>
             <div>
             {news.map(item => (
