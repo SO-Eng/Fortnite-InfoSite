@@ -55,16 +55,22 @@ function Home() {
         <div className="siteInfoBar">
             <h1>FortNite Master Site</h1>
         </div>
-        <div className="homeStart">
-            <div className="homeStartInfo">
-                <h1>Hier kannst Du Informationen</h1>
-                <h1>über FortNite, Items und Spieler</h1>
-                <h1>erhalten!</h1>
-                <h2>Schau Dich um, viel Spaß dabei!</h2>
+        <div className="startPic">
+            <div className="homeStart">
+                <div className="homeStartInfo">
+                    <h1>Hier kannst Du Informationen</h1>
+                    <h1>über FortNite, Items und Spieler</h1>
+                    <h1>erhalten!</h1>
+                    <h2>Schau Dich um, viel Spaß dabei!</h2>
+                </div>
+                <img className="fnMap" src="https://media.fortniteapi.io/images/maps/map-13.30-2.png?showPOI=true" alt=""/>
             </div>
-            <img className="fnMap" src="https://media.fortniteapi.io/images/maps/map-13.30-2.png?showPOI=true" alt=""/>
+
         </div>
+        <div className="shadowBox"></div>
+
         <div className="homeNews">
+
             <h2 className="newsHeader">News</h2>
             <div>
             {news.map(item => (
