@@ -754,43 +754,43 @@ h1,h2, h3 {
 }
 
 .cardCommon{
-  background-image: radial-gradient(#CACACA, #7D7D7D);
-  border-color: #CACACA;
+  background-image: radial-gradient(#bebebe, #646464);
+  border-color: #b1b1b1;
   border-style: solid;
   border-width: 2px;
 }
 
 .cardUncommon{
-  background-image: radial-gradient(#67B81D, #195417);
-  border-color: #77CD33;
+  background-image: radial-gradient(#69bb1e, #175117);
+  border-color: #87e339;
   border-style: solid;
   border-width: 2px;
 }
 
 .cardRare{
-  background-image: radial-gradient(#58AEE6, #154280);
-  border-color: #37D1FF;
+  background-image: radial-gradient(#2cc1ff, #143977);
+  border-color: #37d1ff;
   border-style: solid;
   border-width: 2px;
 }
 
 .cardEpic{
-  background-image: radial-gradient(#B954F4, #57288D);
-  border-color: #E95EFF;
+  background-image: radial-gradient(#c359ff, #4b2483);
+  border-color: #e95eff;
   border-style: solid;
   border-width: 2px;
 }
 
 .cardLegendary{
-  background-image: radial-gradient(#E48822, #7A381D);
-  border-color: #E98D4B;
+  background-image: radial-gradient(#ea8d23, #78371d);
+  border-color: #e98d4b;
   border-style: solid;
   border-width: 2px;
 }
 
 .cardMythic{
-  background-image: radial-gradient(#FCDD79, #DDA322);
-  border-color: #FCDD79;
+  background-image: radial-gradient(#cfa939, #a77d0b);
+  border-color: #947942;
   border-style: solid;
   border-width: 2px;
 }
@@ -803,64 +803,65 @@ h1,h2, h3 {
 }
 
 .cardMarvel{
-  background-image: radial-gradient(#931414, #7F0C0C);
-  border-color: #931414;
+  background-image: radial-gradient(#c53334, #761b1b);
+  border-color: #ef3537;
   border-style: solid;
   border-width: 2px;
 }
 
 .cardDark{
-  background-image: radial-gradient(#B542B2, #7C0959);
-  border-color: #B542B2;
+  background-image: radial-gradient(#fb22df, #520c6f);
+  border-color: #ff42e7;
   border-style: solid;
   border-width: 2px;
 }
 
 .cardDc{
-  background-image: radial-gradient(#506FBE, #253562);
-  border-color: #6094CE;
+  background-image: radial-gradient(#5475c7, #243461);
+  border-color: #6094ce;
   border-style: solid;
   border-width: 2px;
 }
 
 .cardFrozen{
-  background-image: radial-gradient(#74D0FB, #5AA3C8);
-  border-color: #74D0FB;
+  background-image: radial-gradient(#72bfe2, #176f97);
+  border-color: #aad0ee;
   border-style: solid;
   border-width: 2px;
 }
 
 .cardLava{
-  background-image: radial-gradient(#E9211E, #760F1E);
-  border-color: #E9211E;
+  background-image: radial-gradient(#7e0e39, #560438);
+  border-color: #a03035;
   border-style: solid;
   border-width: 2px;
 }
 
 .cardIcon{
-  background-image: radial-gradient(#90D2C1, #419C9D);
-  border-color: #90D2C1;
+  background-image: radial-gradient(#096574, #002e3e);
+  border-color: #40b8c7;
   border-style: solid;
   border-width: 2px;
 }
 
 .cardShadow{
-  background-image: radial-gradient(#737176, #313135);
-  border-color: #525254;
+  background-image: radial-gradient(#77757a, #29292d);
+  border-color: #6e6e6e;
   border-style: solid;
   border-width: 2px;
 }
 
 .cardStarwars{
-  background-image: radial-gradient(#8e947b, #31312E);
-  border-color: #AFDF00;
+  background: radial-gradient(#090909, #090909);
+  background-image: url('https://media.fortniteapi.io/images/swseries512.png');
+  border-color: #4c4c4c;
   border-style: solid;
   border-width: 2px;
 }
 
 .cardSlurp{
-  background-image: radial-gradient(#27B0E4, #2996B6);
-  border-color: #27B0E4;
+  background-image: radial-gradient(#0bb8a8, #03f1ed);
+  border-color: #008bde;
   border-style: solid;
   border-width: 2px;
 }

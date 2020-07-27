@@ -62,7 +62,7 @@ function Home() {
                 <h1>erhalten!</h1>
                 <h2>Schau Dich um, viel Spaß dabei!</h2>
             </div>
-            <img className="fnMap" src="https://media.fortniteapi.io/images/maps/map-13.20-4.png?showPOI=true" alt=""/>
+            <img className="fnMap" src="https://media.fortniteapi.io/images/maps/map-13.30-2.png?showPOI=true" alt=""/>
         </div>
         <div className="homeNews">
             <h2 className="newsHeader">News</h2>

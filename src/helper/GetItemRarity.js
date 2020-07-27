@@ -30,7 +30,7 @@ const getItemRarity = (rarity) => {
             return "cardIcon";
         case "shadow series":
             return "cardShadow";
-        case "star wars":
+        case "star wars series":
             return "cardStarwars";
         case "slurp series":
             return "cardSlurp";
