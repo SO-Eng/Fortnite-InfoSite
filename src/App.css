@@ -425,6 +425,10 @@ nav{
   height: auto;
 }
 
+.notValid{
+  color: #a03035;
+}
+
 .loading{
   display: flex;
   justify-content: center;
