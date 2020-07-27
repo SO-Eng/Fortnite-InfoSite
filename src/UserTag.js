@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
 
-function UserTag({ firstCall, globalStats, name }) {
+function UserTag({ stillLoading, firstCall, globalStats, name }) {
 
     function calcKD(kd) {
         const sum = ((kd?.duo.kd + kd?.solo.kd + kd?.squad.kd) / 3).toFixed(2);
@@ -28,7 +28,10 @@ function UserTag({ firstCall, globalStats, name }) {
         return nf.format(sum);
     };
 
-    if (!firstCall) {
+    if (stillLoading) {
+        return null;
+    }
+    else if (!firstCall) {
         return null;
     }
     else if (globalStats == null) {
@@ -37,7 +40,7 @@ function UserTag({ firstCall, globalStats, name }) {
     else {
         return (
             <div className="userBanner">
-                <div className="bannerHeader divider">Spielerinfromationen:</div>
+                <div className="bannerHeader divider">Spielerinformationen:</div>
                 <div className="userTagInfo">
                     <div className="gamerName">
                         <div className="userTextes">Name:</div>

@@ -3,6 +3,7 @@ import Locked from './UserLocked';
 import './App.css';
 import UserLocked from './UserLocked';
 import UserTag from './UserTag';
+import Loading from './LoadingStats';
 
 function Statistics() {
 
@@ -15,6 +16,7 @@ function Statistics() {
 
   var query = "";
   var apiCall = "";
+  const [isLoading, setIsLoading] = useState(false);
   const [apiCalled, setApiCalled] = useState(false);
   const [search, setSearch] = useState("");
   const [playerStats, setPlayerStats] = useState([]);
@@ -41,14 +43,16 @@ function Statistics() {
     const items = await data.json();
 
     console.log(items);
-
+    setIsLoading(true);
+    
     const data2 = await fetch(`https://fortniteapi.io/stats?account=${items.account_id}`, requestOptions);
     const userStats = await data2.json();
-
-    setApiCalled(true);
-
+    
+    
     console.log(userStats);
+    setIsLoading(false);
     setPlayerStats(userStats);
+    setApiCalled(true);
   };
 
   const updateSearch = e => {
@@ -92,9 +96,10 @@ function Statistics() {
         </form>
       </div>
       <div className="statisticsSite">
-        <UserTag firstCall={apiCalled} globalStats={playerStats.global_stats} name={playerStats.name}/>
+        <Loading stillLoading={isLoading} />
+        <UserTag stillLoading={isLoading} firstCall={apiCalled} globalStats={playerStats.global_stats} name={playerStats.name}/>
         <div>
-          <Locked firstCall={apiCalled} globalStats={playerStats.global_stats} />
+          <Locked stillLoading={isLoading} firstCall={apiCalled} globalStats={playerStats.global_stats} nameLocked={playerStats.name}/>
         </div>
 
       </div>
