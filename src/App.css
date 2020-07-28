@@ -361,7 +361,7 @@ nav{
   padding-bottom: 10px;
   margin-left: auto;
   margin-right: auto;
-  margin-bottom: 50px;
+  margin-bottom: 25px;
   background: #3E3E42;
   border-radius: 10px;
 }
@@ -486,6 +486,11 @@ nav{
   }
 }
 
+.userStatsWrapper{
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
 
 /* UserStats */
 .statsWrapper{
@@ -499,6 +504,8 @@ nav{
   justify-content: space-between;
   height: 40px;
   padding: 0 20px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
 }
 
 .statsGame{
@@ -519,6 +526,8 @@ nav{
   justify-content: space-between;
   padding: 0px 20px;
   background: #3E3E42;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
 
 .statsBox{

@@ -31,27 +31,27 @@ function UserStats({ stats, game }) {
         <div className="statsWrapper">
             <div className="statsHeader" style={setHeaderColor(game)}>
                 <div className="statsGame">{game}</div>
-                <div className="gameCount">{stats.matchesplayed} Games</div>
+                <div className="gameCount">{stats?.matchesplayed} Games</div>
             </div>
             <div className="statsList">
                 <div>
                     <div className="statsBox">
                         <div className="statsKey">Wins</div>
-                        <div className="statsValue">{stats.placetop1}</div>
+                        <div className="statsValue">{stats?.placetop1}</div>
                     </div>
                     <div className="statsBox">
                         <div className="statsKey">Kills</div>
-                        <div className="statsValue">{stats.kills}</div>
+                        <div className="statsValue">{stats?.kills}</div>
                     </div>
                 </div>
                 <div>
                     <div className="statsBox">
                         <div className="statsKey">Win %</div>
-                        <div className="statsValue">{(stats.winrate)*100}</div>
+                        <div className="statsValue">{(stats?.winrate)*100}</div>
                     </div>
                     <div className="statsBox">
                         <div className="statsKey">K/D</div>
-                        <div className="statsValue">{stats.kd}</div>
+                        <div className="statsValue">{stats?.kd}</div>
                     </div>
                 </div>
             </div>

@@ -76,7 +76,11 @@ function UserTag({ stillLoading, firstCall, globalStats, name }) {
                         </div>
                     </div>
                 </div>
-                <UserStats stats={globalStats.solo} game={"Solo"}/>
+                <div className="userStatsWrapper">
+                    <UserStats stats={globalStats.solo} game={"Solo"}/>
+                    <UserStats stats={globalStats.duo} game={"Duos"}/>
+                    <UserStats stats={globalStats.squad} game={"Squads"}/>
+                </div>
             </div>
         );
     }
