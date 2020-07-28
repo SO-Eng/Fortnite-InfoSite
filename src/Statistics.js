@@ -96,10 +96,23 @@ function Statistics() {
         </form>
       </div>
       <div className="statisticsSite">
-        <Loading stillLoading={isLoading} />
-        <UserTag stillLoading={isLoading} firstCall={apiCalled} globalStats={playerStats.global_stats} name={playerStats.name}/>
+        <Loading 
+          stillLoading={isLoading} 
+        />
+        <UserTag 
+          stillLoading={isLoading} 
+          firstCall={apiCalled} 
+          globalStats={playerStats.global_stats} 
+          name={playerStats.name}
+        />
         <div>
-          <Locked stillLoading={isLoading} firstCall={apiCalled} isValid={playerStats.result} globalStats={playerStats.global_stats} nameLocked={playerStats.name}/>
+          <Locked 
+            stillLoading={isLoading} 
+            firstCall={apiCalled} 
+            isValid={playerStats.result} 
+            globalStats={playerStats.global_stats} 
+            nameLocked={playerStats.name}
+          />
         </div>
 
       </div>

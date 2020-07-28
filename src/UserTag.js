@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
+import UserStats from './UserStats';
 
 function UserTag({ stillLoading, firstCall, globalStats, name }) {
 
@@ -39,40 +40,43 @@ function UserTag({ stillLoading, firstCall, globalStats, name }) {
     }
     else {
         return (
-            <div className="userBanner">
-                <div className="bannerHeader divider">Spielerinformationen:</div>
-                <div className="userTagInfo">
-                    <div className="gamerName">
-                        <div className="userTextes">Name:</div>
-                        <div className="userTextes userName">{name}</div>
+            <div>
+                <div className="userBanner">
+                    <div className="bannerHeader divider">Spielerinformationen:</div>
+                    <div className="userTagInfo">
+                        <div className="gamerName">
+                            <div className="userTextes">Name:</div>
+                            <div className="userTextes userName">{name}</div>
+                        </div>
+                        <div className="userOptions">
+                            <div className="userTextes">Platform:</div>
+                            <button className="platformButtons platformActive">All</button>
+                            <button className="platformButtons">Keyboard</button>
+                            <button className="platformButtons">GamePad</button>
+                            <button className="platformButtons">Touch</button>
+                        </div>
                     </div>
-                    <div className="userOptions">
-                        <div className="userTextes">Platform:</div>
-                        <button className="platformButtons platformActive">All</button>
-                        <button className="platformButtons">Keyboard</button>
-                        <button className="platformButtons">GamePad</button>
-                        <button className="platformButtons">Touch</button>
+                    <div className="divider"></div>
+                    <div className="userGameInfo">
+                        <div className="statsInfo">
+                            <div className="statsText">K/D:</div>
+                            <div className="statsText userName">{calcKD(globalStats)}</div>
+                        </div>
+                        <div className="statsInfo">
+                            <div className="statsText">Wins:</div>
+                            <div className="statsText userName">{calcWins(globalStats)}</div>
+                        </div>
+                        <div className="statsInfo">
+                            <div className="statsText">Winrate:</div>
+                            <div className="statsText userName">{calcWinRate(globalStats)}</div>
+                        </div>
+                        <div className="statsInfo">
+                            <div className="statsText">Kills:</div>
+                            <div className="statsText userName">{calcKills(globalStats)}</div>
+                        </div>
                     </div>
                 </div>
-                <div className="divider"></div>
-                <div className="userGameInfo">
-                    <div className="statsInfo">
-                        <div className="statsText">KD:</div>
-                        <div className="statsText userName">{calcKD(globalStats)}</div>
-                    </div>
-                    <div className="statsInfo">
-                        <div className="statsText">Wins:</div>
-                        <div className="statsText userName">{calcWins(globalStats)}</div>
-                    </div>
-                    <div className="statsInfo">
-                        <div className="statsText">Winrate:</div>
-                        <div className="statsText userName">{calcWinRate(globalStats)}</div>
-                    </div>
-                    <div className="statsInfo">
-                        <div className="statsText">Kills:</div>
-                        <div className="statsText userName">{calcKills(globalStats)}</div>
-                    </div>
-                </div>
+                <UserStats stats={globalStats.solo} game={"Solo"}/>
             </div>
         );
     }
