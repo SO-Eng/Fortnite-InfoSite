@@ -19,7 +19,7 @@ function UserTag({ stillLoading, firstCall, globalStats, name }) {
     const calcWinRate = (winRate) => {
         const sum = ((winRate?.duo.winrate + winRate?.solo.winrate + winRate?.squad.winrate) / 3 * 100).toFixed(1);
 
-        return sum + " %";
+        return sum;
     };
 
     const calcKills = (kills) => {
@@ -27,6 +27,12 @@ function UserTag({ stillLoading, firstCall, globalStats, name }) {
         const sum = (kills?.duo.kills + kills?.solo.kills + kills?.squad.kills);
 
         return nf.format(sum);
+    };
+
+    const formatNum = (num) => {
+        var nf = Intl.NumberFormat();
+
+        return nf.format(num);
     };
 
     if (stillLoading) {
@@ -60,15 +66,15 @@ function UserTag({ stillLoading, firstCall, globalStats, name }) {
                     <div className="userGameInfo">
                         <div className="statsInfo">
                             <div className="statsText">K/D:</div>
-                            <div className="statsText userName">{calcKD(globalStats)}</div>
+                            <div className="statsText userName">{formatNum(calcKD(globalStats))}</div>
                         </div>
                         <div className="statsInfo">
                             <div className="statsText">Wins:</div>
-                            <div className="statsText userName">{calcWins(globalStats)}</div>
+                            <div className="statsText userName">{formatNum(calcWins(globalStats))}</div>
                         </div>
                         <div className="statsInfo">
                             <div className="statsText">Winrate:</div>
-                            <div className="statsText userName">{calcWinRate(globalStats)}</div>
+                            <div className="statsText userName">{formatNum(calcWinRate(globalStats))} %</div>
                         </div>
                         <div className="statsInfo">
                             <div className="statsText">Kills:</div>
