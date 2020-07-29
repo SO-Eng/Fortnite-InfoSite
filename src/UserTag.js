@@ -2,27 +2,40 @@ import React, {useState, useEffect} from 'react';
 import './App.css';
 import UserStats from './UserStats';
 
-function UserTag({ stillLoading, firstCall, globalStats, name }) {
+function UserTag({ stillLoading, firstCall, globalStats, name, level }) {
 
     const calcKD = (kd) => {
-        const sum = ((kd?.duo.kd + kd?.solo.kd + kd?.squad.kd) / 3).toFixed(2);
+        if (level?.level == null) {
+            return 0;
+        }
 
+        const sum = ((kd?.duo.kd + kd?.solo.kd + kd?.squad.kd) / 3).toFixed(2);
         return sum;
     };
 
     const calcWins = (wins) => {
-        const sum = (wins?.duo.placetop1 + wins?.solo.placetop1 + wins?.squad.placetop1);
+        if (level?.level == null) {
+            return 0;
+        }
 
+        const sum = (wins?.duo.placetop1 + wins?.solo.placetop1 + wins?.squad.placetop1);
         return sum;
     };
 
     const calcWinRate = (winRate) => {
-        const sum = ((winRate?.duo.winrate + winRate?.solo.winrate + winRate?.squad.winrate) / 3 * 100).toFixed(1);
+        if (level?.level == null) {
+            return 0;
+        }
 
+        const sum = ((winRate?.duo.winrate + winRate?.solo.winrate + winRate?.squad.winrate) / 3 * 100).toFixed(1);
         return sum;
     };
 
     const calcKills = (kills) => {
+        if (level?.level == null) {
+            return 0;
+        }
+
         let nf = Intl.NumberFormat();
         const sum = (kills?.duo.kills + kills?.solo.kills + kills?.squad.kills);
 

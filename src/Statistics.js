@@ -100,6 +100,7 @@ function Statistics() {
           firstCall={apiCalled} 
           globalStats={playerStats.global_stats} 
           name={playerStats.name}
+          level={playerStats.account}
         />
         <div>
           <Locked 
