@@ -1,8 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import './App.css';
 import UserStats from './UserStats';
+import RecentMatches from './RecentMatches';
 
-function UserTag({ stillLoading, firstCall, globalStats, name, level }) {
+function UserTag({ stillLoading, firstCall, globalStats, name, level, matches, mode }) {
 
     const calcKD = (kd) => {
         if (level?.level == null) {
@@ -99,6 +100,9 @@ function UserTag({ stillLoading, firstCall, globalStats, name, level }) {
                     <UserStats stats={globalStats.solo} game={"Solo"}/>
                     <UserStats stats={globalStats.duo} game={"Duos"}/>
                     <UserStats stats={globalStats.squad} game={"Squads"}/>
+                </div>
+                <div className="userStatsWrapper">
+                    <RecentMatches matches={matches} mode={mode} />
                 </div>
             </div>
         );

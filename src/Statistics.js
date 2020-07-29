@@ -16,6 +16,8 @@ function Statistics() {
   const [apiCalled, setApiCalled] = useState(false);
   const [search, setSearch] = useState("");
   const [playerStats, setPlayerStats] = useState([]);
+  const [recentMatches, setRecentMatches] = useState([]);
+  const [gameModes, setGameModes] = useState([]);
   const [platform, setPlatform] = useState("");
 
 
@@ -44,11 +46,23 @@ function Statistics() {
     const data2 = await fetch(`https://fortniteapi.io/stats?account=${items.account_id}`, requestOptions);
     const userStats = await data2.json();
     
-    
     console.log(userStats);
-    setIsLoading(false);
     setPlayerStats(userStats);
+    
+    const data3 = await fetch(`https://fortniteapi.io/matches?account=${items.account_id}`, requestOptions);
+    const matches = await data3.json();
+    
+    console.log(matches);
+    setRecentMatches(matches);
+
+    setIsLoading(false);
     setApiCalled(true);
+
+    const data4 = await fetch('https://fortniteapi.io/game/modes?lang=de', requestOptions);
+    const modes = await data4.json();
+    
+    console.log(modes);
+    setGameModes(modes);
   };
 
   const updateSearch = e => {
@@ -101,6 +115,8 @@ function Statistics() {
           globalStats={playerStats.global_stats} 
           name={playerStats.name}
           level={playerStats.account}
+          matches={recentMatches.matches}
+          mode={gameModes.modes}
         />
         <div>
           <Locked 

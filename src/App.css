@@ -557,6 +557,12 @@ nav{
 }
 
 
+/* RecentGames */
+.tableImage{
+  width: 75px;
+  height: auto;
+}
+
 /* Shop */
 .shopCard{
   display: flex;
