@@ -1,16 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import './App.css'
+import AuthHeader from './helper/Authorization';
 import {Link} from 'react-router-dom';
 
 
 function Home() {
 
-    var myHeaders = new Headers();
-    myHeaders.append("Authorization", "ee3d5450-77773ada-2c1933ae-2df885f8");
-
-    var requestOptions = {
-        headers: myHeaders,
-    };
+    let requestOptions = new AuthHeader();
     
     useEffect(() => {
         fetchItems();

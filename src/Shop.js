@@ -1,17 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
+import AuthHeader from './helper/Authorization';
 import Countdown from './helper/Countdown';
 import RareColor from './helper/GetItemRarity';
 import {Link} from 'react-router-dom';
 
 function Shop() {
 
-    var myHeaders = new Headers();
-    myHeaders.append("Authorization", "ee3d5450-77773ada-2c1933ae-2df885f8");
-
-    var requestOptions = {
-        headers: myHeaders,
-    };
+    let requestOptions = new AuthHeader();
     
     const [featuredItems, setFeaturedItems] = useState([]);
     const [specialFeaturedItems, setSpecialFeaturedItems] = useState([]);

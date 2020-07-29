@@ -1,18 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import Locked from './UserLocked';
 import './App.css';
+import AuthHeader from './helper/Authorization'
 import UserLocked from './UserLocked';
 import UserTag from './UserTag';
 import Loading from './LoadingStats';
 
 function Statistics() {
 
-  var myHeaders = new Headers();
-  myHeaders.append("Authorization", "ee3d5450-77773ada-2c1933ae-2df885f8");
-
-  var requestOptions = {
-      headers: myHeaders,
-  };
+  let requestOptions = new AuthHeader();
 
   var query = "";
   var apiCall = "";

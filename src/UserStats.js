@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import { ISO_8601 } from 'moment';
 
 function UserStats({ stats, game }) {
 
