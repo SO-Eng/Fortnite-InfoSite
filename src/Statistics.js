@@ -10,8 +10,8 @@ function Statistics() {
 
   let requestOptions = new AuthHeader();
 
-  var query = "";
-  var apiCall = "";
+  let query = "";
+  let apiCall = "";
   const [isLoading, setIsLoading] = useState(false);
   const [apiCalled, setApiCalled] = useState(false);
   const [search, setSearch] = useState("");

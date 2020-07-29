@@ -28,7 +28,7 @@ function UserStats({ stats, game }) {
     };
 
     const formatNum = (num) => {
-        var nf = Intl.NumberFormat();
+        let nf = Intl.NumberFormat();
 
         return nf.format(num);
     };

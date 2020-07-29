@@ -23,14 +23,14 @@ function UserTag({ stillLoading, firstCall, globalStats, name }) {
     };
 
     const calcKills = (kills) => {
-        var nf = Intl.NumberFormat();
+        let nf = Intl.NumberFormat();
         const sum = (kills?.duo.kills + kills?.solo.kills + kills?.squad.kills);
 
         return nf.format(sum);
     };
 
     const formatNum = (num) => {
-        var nf = Intl.NumberFormat();
+        let nf = Intl.NumberFormat();
 
         return nf.format(num);
     };

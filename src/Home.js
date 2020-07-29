@@ -25,7 +25,7 @@ function Home() {
     };
 
     const isLive = (live) => {
-        var style = "";
+        let style = "";
 
         if (live) {
             style = {
@@ -42,7 +42,7 @@ function Home() {
 
     const convertDate = (date) => {
 
-        var newDate = new Date(date);
+        let newDate = new Date(date);
         return newDate.toLocaleDateString();
     };
 
