@@ -92,7 +92,7 @@ function RecentMatches({ matches, mode }) {
                         <tr key={info.score + info.mode + info.playersoutlived}>
                             <td><i className={getPlatform(info.platform)}></i></td>
                             <td><img src={getPicture(info.mode)} alt="" className="tableImage"/></td>
-                            <td>{getModeName(info.mode)}</td>
+                            <td className="modeText">{getModeName(info.mode)}</td>
                             <td>{getPlacement(info)}</td>
                             <td>{formatNum(info.kills)}</td>
                             <td>{formatNum(info.playersoutlived)}</td>

@@ -578,7 +578,7 @@ table{
 }
 
 thead{
-  background: #E48822;
+  background: #ea8d23;
 }
 
 .tableHead{
@@ -603,15 +603,19 @@ td{
   border-width: 2px 20px;
   border-style: solid;
   border-color: #3E3E42;
-  padding: 1px 5px;
-  color: #a7a7a7;
+  padding: 5px 5px 1px 5px;
+  color: #A7A7A7;
   border-bottom-color: springgreen;
   border-left: none;
   border-top: none;
   border-right: none;
   font-family: Helvetica;
   font-size: 16px;
-  font-weight: 0;
+  font-weight: 400;
+}
+
+.modeText{
+  text-align: left !important;
 }
 
 .tableBottom{
@@ -627,7 +631,7 @@ td{
 
   td{
     font-size: 10px;
-    padding: 1px 3px;
+    padding: 3px 3px 1px 3px;
   }
 
   .tableImage{
