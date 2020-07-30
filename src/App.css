@@ -527,13 +527,35 @@ nav{
   line-height: 40px;
 }
 
-.statsList{
+.statsList,
+.statsListEmpty{
   display: flex;
   justify-content: space-between;
   padding: 0px 20px;
   background: #3E3E42;
   border-bottom-left-radius: 10px;
   border-bottom-right-radius: 10px;
+}
+
+.statsListEmpty{
+  display: block;
+  height: 352px;
+  justify-content: center;
+}
+
+.emptyList{
+  position: relative;
+  top: 30%;
+  color: #7D7D7D;
+  font-size: 44px;
+}
+
+.emptyListText{
+  margin-top: 10px;
+  font-size: 24px;
+  text-transform: uppercase;
+  font-family: Helvetica;
+  font-weight: 600;
 }
 
 .statsBox{

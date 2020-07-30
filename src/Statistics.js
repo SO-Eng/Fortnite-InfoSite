@@ -113,6 +113,7 @@ function Statistics() {
           stillLoading={isLoading} 
           firstCall={apiCalled} 
           globalStats={playerStats.global_stats} 
+          input={playerStats.per_input}
           name={playerStats.name}
           level={playerStats.account}
           matches={recentMatches.matches}

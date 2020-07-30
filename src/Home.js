@@ -67,7 +67,7 @@ function Home() {
             <h2 className="newsHeader">News</h2>
             <div>
             {news.map(item => (
-                <div className="newsItems" key={item.title}>
+                <div className="newsItems" key={item.title + item.date}>
                     <img className="imageNews" src={item.image} alt=""/>
                     <div className="newsTextBox">
                         <div className="newsTitle">{item.title}</div>
