@@ -18,7 +18,6 @@ nav{
   text-transform: uppercase;
   font-size: 24px;
   box-shadow: 0px 2px 10px rgb(71, 71, 71);
-
   z-index: 99;
 }
 
@@ -47,7 +46,7 @@ nav{
     position: absolute;
     cursor: pointer;
     top: 32%;
-    left: 85%;
+    left: 80%;
   }
   .toggleShow {
     position: absolute;
@@ -97,7 +96,7 @@ nav{
 
 .tooltip .tooltiptext {
   visibility: hidden;
-  width: 120px;
+  width: 100px;
   background-color: #333;
   color: #fff;
   text-align: center;
@@ -492,6 +491,13 @@ nav{
   flex-wrap: wrap;
 }
 
+@media only screen and (max-width: 415px) {
+ .userBanner{
+  margin-left: 15px;
+  margin-right: 15px;
+ }
+}
+
 /* UserStats */
 .statsWrapper{
   display: block;
@@ -561,6 +567,73 @@ nav{
 .tableImage{
   width: 75px;
   height: auto;
+}
+
+table{
+  background: #3E3E42;
+  border-radius: 10px;
+  border-spacing: 0;
+  margin: 25px 15px 50px 15px;
+  max-width: 800px;
+}
+
+thead{
+  background: #E48822;
+}
+
+.tableHead{
+  height: 40px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-family: "Burbank Big Condensed";
+  font-size: 32px;
+  color: #333;
+}
+
+th{
+  color: white;
+  font-family: "Burbank Big Condensed";
+  font-size: 18px;
+  max-width: 100px;
+  padding: 0 20px;
+}
+
+td{
+  max-width: 100px;
+  border-width: 2px 20px;
+  border-style: solid;
+  border-color: #3E3E42;
+  padding: 1px 5px;
+  color: #a7a7a7;
+  border-bottom-color: springgreen;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  font-family: Helvetica;
+  font-size: 16px;
+  font-weight: 0;
+}
+
+.tableBottom{
+  height: 14px;
+  border-bottom: none;
+}
+
+@media only screen and (max-width: 450px) {
+  th{
+    font-size: 10px;
+    padding: 0 3px;
+  }
+
+  td{
+    font-size: 10px;
+    padding: 1px 3px;
+  }
+
+  .tableImage{
+    width: 35px;
+  }
+  
 }
 
 /* Shop */

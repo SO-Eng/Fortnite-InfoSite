@@ -75,6 +75,9 @@ function RecentMatches({ matches, mode }) {
             <table>
                 <thead>
                     <tr>
+                        <th colSpan="8" className="tableHead">Letzte Spiele</th>
+                    </tr>
+                    <tr>
                         <th>Platform</th>
                         <th colSpan="2">Mode</th>
                         <th>Platzierung</th>
@@ -97,6 +100,9 @@ function RecentMatches({ matches, mode }) {
                             <td>{convertDate(info.date)}</td>
                         </tr>
                     ))}
+                    <tr>
+                        <td className="tableBottom"></td>
+                    </tr>
                 </tbody>
             </table>
         </div>
