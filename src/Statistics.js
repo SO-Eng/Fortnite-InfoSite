@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from 'react';
-import Locked from './UserLocked';
-import './App.css';
-import AuthHeader from './helper/Authorization'
-import UserLocked from './UserLocked';
-import UserTag from './UserTag';
-import Loading from './LoadingStats';
+import React, { useState, useEffect } from "react";
+import Locked from "./UserLocked";
+import "./App.css";
+import AuthHeader from "./helper/Authorization";
+import UserLocked from "./UserLocked";
+import UserTag from "./UserTag";
+import Loading from "./LoadingStats";
 
 function Statistics() {
-
   let requestOptions = new AuthHeader();
 
   let query = "";
@@ -20,19 +19,15 @@ function Statistics() {
   const [gameModes, setGameModes] = useState([]);
   const [platform, setPlatform] = useState("");
 
-
   const setConnectionString = () => {
-
     if (platform == "epic" || platform == "") {
-      apiCall = `https://fortniteapi.io/lookup?username=${query}`;
-    }
-    else{
-      apiCall = `https://fortniteapi.io/lookup?username=${query}&platform=${platform}`;
+      apiCall = `https://fortniteapi.io/v1/lookup?username=${query}`;
+    } else {
+      apiCall = `https://fortniteapi.io/v1/lookup?username=${query}&platform=${platform}`;
     }
   };
 
   const fetchItems = async () => {
-
     if (apiCall === "") {
       return;
     }
@@ -42,34 +37,40 @@ function Statistics() {
 
     console.log(items);
     setIsLoading(true);
-    
-    const data2 = await fetch(`https://fortniteapi.io/stats?account=${items.account_id}`, requestOptions);
+
+    const data2 = await fetch(
+      `https://fortniteapi.io/v1/stats?account=${items.account_id}`,
+      requestOptions
+    );
     const userStats = await data2.json();
-    
+
     console.log(userStats);
     setPlayerStats(userStats);
-    
-    const data3 = await fetch(`https://fortniteapi.io/matches?account=${items.account_id}`, requestOptions);
+
+    const data3 = await fetch(
+      `https://fortniteapi.io/v1/matches?account=${items.account_id}`,
+      requestOptions
+    );
     const matches = await data3.json();
-    
+
     console.log(matches);
     setRecentMatches(matches);
 
     setIsLoading(false);
     setApiCalled(true);
 
-    const data4 = await fetch('https://fortniteapi.io/game/modes?lang=de', requestOptions);
+    const data4 = await fetch("https://fortniteapi.io/v1/game/modes?lang=de", requestOptions);
     const modes = await data4.json();
-    
+
     console.log(modes);
     setGameModes(modes);
   };
 
-  const updateSearch = e => {
+  const updateSearch = (e) => {
     setSearch(e.target.value);
   };
 
-  const getSearch = e => {
+  const getSearch = (e) => {
     e.preventDefault();
     query = search;
     setConnectionString();
@@ -77,11 +78,11 @@ function Statistics() {
     //setSearch("");
   };
 
-  const getSelection = e => {
-    let {value} = e.target;
+  const getSelection = (e) => {
+    let { value } = e.target;
     console.log(value);
     setPlatform(value);
-    };
+  };
 
   useEffect(() => {
     //setConnectionString();
@@ -96,23 +97,29 @@ function Statistics() {
       <div className="searchField">
         <p className="searchHeader">Suche nach Spielern aus dem Fortnite Universum</p>
         <form onSubmit={getSearch} className="searchForm">
-          <input className="searchBar" type="text" value={search} placeholder="Gib einen Spielernamen ein:" onChange={updateSearch} />
+          <input
+            className="searchBar"
+            type="text"
+            value={search}
+            placeholder="Gib einen Spielernamen ein:"
+            onChange={updateSearch}
+          />
           <select className="selectBar" onChange={getSelection}>
             <option value="epic">Epic</option>
             <option value="xbl">X-Box</option>
             <option value="psn">PlayStation</option>
           </select>
-          <button className="searchButton" type="submit" >Suche</button>
+          <button className="searchButton" type="submit">
+            Suche
+          </button>
         </form>
       </div>
       <div className="statisticsSite">
-        <Loading 
-          stillLoading={isLoading} 
-        />
-        <UserTag 
-          stillLoading={isLoading} 
-          firstCall={apiCalled} 
-          globalStats={playerStats.global_stats} 
+        <Loading stillLoading={isLoading} />
+        <UserTag
+          stillLoading={isLoading}
+          firstCall={apiCalled}
+          globalStats={playerStats.global_stats}
           input={playerStats.per_input}
           name={playerStats.name}
           level={playerStats.account}
@@ -120,15 +127,14 @@ function Statistics() {
           mode={gameModes.modes}
         />
         <div>
-          <Locked 
-            stillLoading={isLoading} 
-            firstCall={apiCalled} 
-            isValid={playerStats.result} 
-            globalStats={playerStats.global_stats} 
+          <Locked
+            stillLoading={isLoading}
+            firstCall={apiCalled}
+            isValid={playerStats.result}
+            globalStats={playerStats.global_stats}
             nameLocked={playerStats.name}
           />
         </div>
-
       </div>
     </div>
   );
