@@ -1,20 +1,17 @@
-import React from 'react';
-import './App.css';
-import { Link } from 'react-router-dom'
+import React from "react";
+import "./App.css";
+import { Link } from "react-router-dom";
 
 function Nav() {
-
-  const getSelection = e => {
-    let {value} = e.target;
-    console.log(value);
-    //setPlatform(value);
+  const getSelection = (e) => {
+    // let {value} = e.target;
   };
-  
+
   //https://www.freecodecamp.org/news/how-to-build-a-responsive-navbar-with-a-toggle-menu-using-flexbox-3438e1d08783/
   const classToggle = () => {
-  const navs = document.querySelectorAll('.nav-links')
-  
-  navs.forEach(nav => nav.classList.toggle('toggleShow'));
+    const navs = document.querySelectorAll(".nav-links");
+
+    navs.forEach((nav) => nav.classList.toggle("toggleShow"));
   };
 
   return (
@@ -27,17 +24,21 @@ function Nav() {
       </div>
       <ul className="nav-links">
         <Link className="navStyle" to="/statistics">
-            <li>Statistics</li>
+          <li>Statistics</li>
         </Link>
         <Link className="navStyle" to="/upcuming">
-            <li>Sneak Peak</li>
+          <li>Sneak Peak</li>
         </Link>
         <Link className="navStyle" to="/Shop">
-            <li>Today's Shop</li>
+          <li>Today's Shop</li>
         </Link>
         <div className="navStyle tooltip">
           <span className="tooltiptext">Noch ohne Funktion...</span>
-          <select className="selectBarNav" onChange={getSelection} tooltip="test">
+          <select
+            className="selectBarNav"
+            onChange={getSelection}
+            tooltip="test"
+          >
             <option value="de">Deutsch</option>
             <option value="en">English</option>
           </select>

@@ -16,16 +16,15 @@ function Shop() {
   const [isActiveTwo, setIsActiveTwo] = useState(false);
 
   const fetchItems = async () => {
-    const data = await fetch("https://fortniteapi.io/v1/shop?lang=de", requestOptions);
+    const data = await fetch(
+      "https://fortniteapi.io/v1/shop?lang=de",
+      requestOptions
+    );
 
     const items = await data.json();
 
-    console.log(items);
-    console.log(items.daily);
     setDailyItems(items.daily);
-    console.log(items.featured);
     setFeaturedItems(items.featured);
-    console.log(items.specialFeatured);
     setSpecialFeaturedItems(items.specialFeatured);
     setEndingDates(items.endingDates);
   };
@@ -61,7 +60,10 @@ function Shop() {
   return (
     <div>
       <div className="countDown">
-        <Countdown timeTillDate={endingDates.daily} timeFormat="YYYY MM DD, hh:mm:ss+hh:mm" />
+        <Countdown
+          timeTillDate={endingDates.daily}
+          timeFormat="YYYY MM DD, hh:mm:ss+hh:mm"
+        />
       </div>
       <div className="shopButtons">
         <div

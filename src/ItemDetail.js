@@ -21,7 +21,6 @@ function Item({ match }) {
 
     const item = await data.json();
     setItem(item.item);
-    console.log(item.item);
   };
 
   useEffect(() => {
@@ -50,7 +49,9 @@ function Item({ match }) {
               <p className="itemDescr">Typ: {item.type}</p>
               <p className="itemDescr">Set: {item.set}</p>
               <p className="itemDescr">Rarität: {item.rarity}</p>
-              <p className="itemDescr">{item.price != "" ? `Price: ${item.price} V` : ""}</p>
+              <p className="itemDescr">
+                {item.price != "" ? `Price: ${item.price} V` : ""}
+              </p>
             </div>
             <div>
               <img className="imagesItem" src={item.images.icon} alt="" />

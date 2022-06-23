@@ -13,11 +13,13 @@ function Home() {
   const [news, setNews] = useState([{ live: {} }]);
 
   const fetchItems = async () => {
-    const data = await fetch("https://fortniteapi.io/v1/news?lang=de&type=br", requestOptions);
+    const data = await fetch(
+      "https://fortniteapi.io/v1/news?lang=de&type=br",
+      requestOptions
+    );
 
     const items = await data.json();
 
-    console.log(items.news);
     setNews(items.news);
   };
 

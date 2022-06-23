@@ -16,11 +16,13 @@ function Upcuming() {
   let requestOptions = new AuthHeader();
 
   const fetchItems = async () => {
-    const data = await fetch("https://fortniteapi.io/v1/items/upcoming?lang=de", requestOptions);
+    const data = await fetch(
+      "https://fortniteapi.io/v1/items/upcoming?lang=de",
+      requestOptions
+    );
 
     const items = await data.json();
 
-    console.log(items.items);
     setItems(items.items);
   };
 
@@ -30,7 +32,11 @@ function Upcuming() {
         <h3>Items insgesamt: {items.length} !!!</h3>
       </div>
       {items.map((item) => (
-        <Link className="linkText" to={`/item/${item.id}`} key={item.id + item.name}>
+        <Link
+          className="linkText"
+          to={`/item/${item.id}`}
+          key={item.id + item.name}
+        >
           <div className={`card ${RareColor(item.rarity)}`}>
             <p className="cardName">{item.name}</p>
             <img className="images" src={item.images.icon} alt="" />
